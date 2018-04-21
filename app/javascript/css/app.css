@@ -6,6 +6,11 @@ body {
   line-height: calc(var(--yr) * 5);
   font-family: var(--ff_main);
   font-weight: var(--fw_main);
+
+  @media (--s) {
+    font-size: calc(var(--yr) * 5);
+    line-height: calc(var(--yr) * 6);
+  }
 }
 
 .app {

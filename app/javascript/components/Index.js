@@ -20,7 +20,7 @@ class Index extends React.Component {
             </div>
 
             <div className="slogan">
-              Решения для тех, кто хочет добиться успеха
+              Решения для тех, кто хочет добиться успеха
             </div>
 
             <div className="place">

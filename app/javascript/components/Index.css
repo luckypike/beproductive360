@@ -5,9 +5,26 @@
     padding: calc(var(--yr) * 8) var(--xr) calc(var(--yr) * 16);
     color: white;
     position: relative;
+    z-index: 1;
 
     &_wrapper {
       background-color: var(--pr_color);
+      position: relative;
+      overflow: hidden;
+
+      .bgvid {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        /* z-index: -100; */
+        transform: translateX(-50%) translateY(-50%);
+        /* background-size: cover; */
+        /* transition: 1s opacity; */
+      }
     }
 
     .logo {
