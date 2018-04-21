@@ -1,0 +1,15 @@
+:root {
+  --xr: 1rem;
+  --yr: 0.25rem;
+
+  --pr_color: #213752;
+
+  --ff_main: 'myriad-pro',sans-serif;
+
+  --fw_main: 400;
+  --fw_semi: 600;
+  --fw_bold: 700;
+}
+
+@custom-media --s (min-width: 720px);
+@custom-media --m (min-width: 980px);

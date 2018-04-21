@@ -1,0 +1,30 @@
+p#notice = notice
+
+p
+  strong First name:
+  = @member.first_name
+p
+  strong Middle name:
+  = @member.middle_name
+p
+  strong Last name:
+  = @member.last_name
+p
+  strong Company:
+  = @member.company
+p
+  strong Job:
+  = @member.job
+p
+  strong Session:
+  = @member.session
+p
+  strong Object:
+  = @member.object
+p
+  strong User:
+  = @member.user
+
+=> link_to 'Edit', edit_member_path(@member)
+'|
+=< link_to 'Back', members_path

@@ -1,0 +1,93 @@
+@import 'normalize.css/normalize';
+@import './vars.css';
+
+body {
+  font-size: calc(var(--yr) * 4);
+  line-height: calc(var(--yr) * 5);
+  font-family: var(--ff_main);
+  font-weight: var(--fw_main);
+}
+
+.app {
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.form {
+  .error_notification {
+    margin-bottom: calc(var(--yr) * 2);
+    color: red;
+  }
+
+  &_inputs {
+    margin-bottom: calc(var(--yr) * 4);
+
+    &_item {
+      margin-bottom: calc(var(--yr) * 6);
+
+      label {
+        display: inline-block;
+        margin-bottom: calc(var(--yr) * 2);
+        width: 100%;
+        text-transform: uppercase;
+        color: color(black w(40%));
+        letter-spacing: 0.1em;
+        font-size: calc(var(--yr) * 3.5);
+      }
+
+      .error {
+        display: inline-block;
+        margin-top: calc(var(--yr) * 1);
+        width: 100%;
+        color: red;
+      }
+
+      input {
+        appearance: none;
+        border: 0;
+        background: color(white b(5%));
+        /* box-shadow: inset 0 0 0 1px color(#000 alpha(-70%)); */
+        border-radius: var(--yr);
+        font-size: calc(var(--yr) * 4);
+        line-height: calc(var(--yr) * 5);
+        font-family: inherit;
+        outline: none;
+        padding: calc(var(--yr) * 3) calc(var(--xr) / 2);
+        display: inline-block;
+        width: 100%;
+
+        &:focus {
+          background: color(white blend(var(--pr_color) 10%));
+        }
+      }
+
+      &.field_with_errors {
+        input {
+          background: color(white blend(red 5%));
+          /* box-shadow: inset 0 0 0 1px color(red alpha(-20%)); */
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  background-color: var(--pr_color);
+  border: 0;
+  color: #fff;
+  display: inline-block;
+  border-radius: var(--yr);
+  padding: calc(var(--yr) * 5) calc(var(--xr));
+  font-size: calc(var(--yr) * 3);
+  line-height: calc(var(--yr) * 5);
+  font-family: inherit;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  outline: none;
+
+  &:disabled {
+    background-color: color(#fff blackness(+20%))
+  }
+}

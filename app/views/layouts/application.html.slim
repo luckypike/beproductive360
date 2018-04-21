@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title Федеральный форум «Производительность 360»
+
+    = favicon_link_tag '/favicon.ico'
+    = favicon_link_tag '/apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png'
+    = csrf_meta_tags
+    = tag('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' })
+
+  body
+    = yield
+
+    = stylesheet_pack_tag 'app'
+    = javascript_pack_tag 'app', async: true
+    = stylesheet_link_tag 'https://use.typekit.net/ugs7vkq.css'

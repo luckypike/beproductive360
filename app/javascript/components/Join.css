@@ -1,0 +1,22 @@
+@import '../css/vars.css';
+
+.page_join {
+  padding: calc(var(--yr) * 16) var(--xr);
+
+  &_form {
+    .logo {
+      margin: 0 auto calc(var(--yr) * 8);
+      max-width: 10rem;
+
+      img {
+        display: block;
+      }
+    }
+
+    .form {
+      margin: 0 auto calc(var(--yr) * 8);
+      max-width: 18rem;
+
+    }
+  }
+}

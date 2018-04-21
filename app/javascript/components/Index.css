@@ -1,0 +1,93 @@
+@import '../css/vars.css';
+
+.page_index {
+  &_header {
+    padding: calc(var(--yr) * 8) var(--xr) calc(var(--yr) * 16);
+    color: white;
+    position: relative;
+
+    &_wrapper {
+      background-color: var(--pr_color);
+    }
+
+    .logo {
+      padding-right: 60px;
+      max-width: 23rem;
+
+      svg {
+        display: block;
+
+        .main {
+          /* fill: var(--pr_color); */
+          fill: white;
+        }
+      }
+    }
+
+    .slogan {
+      font-size: calc(var(--yr) * 10);
+      line-height: calc(var(--yr) * 12);
+      font-weight: var(--fw_bold);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: calc(var(--yr) * 8) 0;
+
+      @media (--s) {
+        font-size: calc(var(--yr) * 22.5);
+        line-height: calc(var(--yr) * 24);
+      }
+    }
+
+    .place {
+      margin: 0 0 calc(var(--yr) * 8);
+    }
+
+    .join {
+      a {
+        background-color: #fcb72d;
+        border: 0;
+        color: black;
+        display: inline-block;
+        border-radius: var(--yr);
+        padding: calc(var(--yr) * 5) calc(var(--xr));
+        font-size: calc(var(--yr) * 4.5);
+        line-height: calc(var(--yr) * 6);
+        font-family: inherit;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        outline: none;
+        text-decoration: none;
+        font-weight: var(--fw_semi);
+
+        @media (--s) {
+          font-size: calc(var(--yr) * 5.5);
+          line-height: calc(var(--yr) * 6);
+
+        }
+      }
+    }
+
+    @media (--s) {
+      .logo {
+        padding: calc(var(--yr) * 8) 0;
+        height: calc(var(--yr) * 32);
+      }
+
+      .join {
+        position: absolute;
+        top: calc(var(--yr) * 16);
+        right: var(--xr);
+      }
+    }
+
+    @media (--m) {
+      margin: 0 calc(2 / 16 * 100%);
+
+      .slogan {
+        max-width: 64rem;
+      }
+
+
+    }
+  }
+}
