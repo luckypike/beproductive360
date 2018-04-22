@@ -9,7 +9,7 @@ body {
 
   @media (--s) {
     font-size: calc(var(--yr) * 5);
-    line-height: calc(var(--yr) * 6);
+    line-height: calc(var(--yr) * 7);
   }
 }
 

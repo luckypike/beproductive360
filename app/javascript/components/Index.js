@@ -38,6 +38,17 @@ class Index extends React.Component {
             <source src={video} type="video/mp4" />
           </video>
         </div>
+
+        <div className="page_index_intro">
+          <div className="when">
+            16-17 марта 2018
+          </div>
+
+          <div className="who">
+            Форум соберет инициативные группы для обмена опытом
+            и обсуждения рабочих вопросов в рамъках реализации национальной инициативы «Повышение производительности труда и поддержка занятости»
+          </div>
+        </div>
       </div>
     );
   }

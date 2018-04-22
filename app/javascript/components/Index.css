@@ -103,8 +103,31 @@
       .slogan {
         max-width: 64rem;
       }
+    }
+  }
 
+  &_intro {
+    padding: calc(var(--yr) * 8) var(--xr) calc(var(--yr) * 16);
 
+    .when {
+      color: #1f4995;
+      margin: 0 0 calc(var(--yr) * 8);
+      font-size: calc(var(--yr) * 8);
+      line-height: calc(var(--yr) * 9);
+      font-weight: var(--fw_bold);
+
+      @media (--s) {
+        font-size: calc(var(--yr) * 22);
+        line-height: calc(var(--yr) * 24);
+      }
+    }
+
+    @media (--m) {
+      margin: 0 calc(2 / 16 * 100%);
+
+      .who {
+        max-width: 80%;
+      }
     }
   }
 }
