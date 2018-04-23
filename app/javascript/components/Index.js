@@ -269,7 +269,7 @@ class Index extends React.Component {
 
               <div className="section">
                 <div className="section_time">
-                   08:30 — 09:30
+                  14:00 — 15:30
                 </div>
 
                 <div className="section_title">
@@ -328,7 +328,7 @@ class Index extends React.Component {
 
               <div className="section">
                 <div className="section_time">
-                   08:30 — 09:30
+                  16:00 — 18:00
                 </div>
 
                 <div className="section_title">
