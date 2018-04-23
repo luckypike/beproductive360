@@ -28,5 +28,8 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+    if user.present?
+      can :manage, Member, user_id: user.id
+    end
   end
 end

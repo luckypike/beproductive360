@@ -80,6 +80,7 @@ h2 {
       }
 
       input[type=text],
+      input[type=tel],
       input[type=number] {
         appearance: none;
         border: 0;
@@ -167,6 +168,7 @@ a {
   background-color: var(--pr_color);
   border: 0;
   color: #fff;
+  cursor: pointer;
   display: inline-block;
   border-radius: var(--yr);
   padding: calc(var(--yr) * 5) calc(var(--xr));
