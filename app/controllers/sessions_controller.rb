@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class SessionsController < ApplicationController
   before_action :redirect_auth, only: [:new, :create]
 
@@ -12,7 +10,7 @@ class SessionsController < ApplicationController
   def create
     unless logged_in?
       if params[:token].present?
-        user = User.find_by(phone: params[:phone], token: params[:token])
+        user = User.find_by(phone: User::prepare_phone(params[:phone]), token: params[:token])
         if user
           auto_login(user, true)
           head :ok, location: [:members]
@@ -21,9 +19,10 @@ class SessionsController < ApplicationController
         end
 
       else
-        user = User.find_or_initialize_by(phone: params[:phone])
+        user = User.find_or_initialize_by(phone: User::prepare_phone(params[:phone]))
         user.token = rand.to_s[2..5]
         user.save
+        user.send_token
       end
     end
   end

@@ -16,6 +16,8 @@ gem 'cancancan'
 gem 'slim-rails'
 gem 'simple_form'
 
+gem 'addressable'
+
 gem 'rails-i18n'
 
 gem 'meta-tags'
