@@ -3,6 +3,10 @@
 .page_members {
   padding: calc(var(--yr) * 16) var(--xr);
 
+  h1 {
+    margin-bottom: calc(var(--yr) * 5);
+  }
+
   & > div {
     max-width: 42rem;
   }

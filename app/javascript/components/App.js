@@ -11,6 +11,14 @@ import Index from './Index';
 import Join from './Join';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      auth: this.props.auth
+    }
+  }
+
   render () {
     return (
       <Router>

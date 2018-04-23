@@ -24,6 +24,19 @@ h1, h2, h3 {
   margin: 0;
 }
 
+h1 {
+  font-size: calc(var(--yr) * 6);
+  line-height: calc(var(--yr) * 8);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: var(--fw_bold);
+
+  @media (--s) {
+    font-size: calc(var(--yr) * 11.25);
+    line-height: calc(var(--yr) * 12);
+  }
+}
+
 h2 {
   font-size: calc(var(--yr) * 5);
   line-height: calc(var(--yr) * 7);

@@ -28,6 +28,9 @@ class Join extends React.Component {
   }
 
   componentDidMount() {
+    if(this.props.auth) {
+      window.location.href = this.props.members_path;
+    }
     // new Cleave(this.phoneRef.current, {
     //   numericOnly: true,
     //   prefix: '+7',
