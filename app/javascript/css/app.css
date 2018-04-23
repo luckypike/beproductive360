@@ -62,7 +62,7 @@ h2 {
     &_item {
       margin-bottom: calc(var(--yr) * 6);
 
-      label {
+      & > label {
         display: inline-block;
         margin-bottom: calc(var(--yr) * 2);
         width: 100%;
@@ -79,7 +79,8 @@ h2 {
         color: red;
       }
 
-      input {
+      input[type=text],
+      input[type=number] {
         appearance: none;
         border: 0;
         background: color(white b(5%));
@@ -104,8 +105,32 @@ h2 {
           /* box-shadow: inset 0 0 0 1px color(red alpha(-20%)); */
         }
       }
+
+      &.radio_buttons {
+        .radio {
+          display: block;
+          margin-bottom: calc(var(--yr) * 2);
+
+          & > label {
+            /* text-transform: uppercase; */
+            color: color(black w(40%));
+            /* letter-spacing: 0.1em; */
+            font-size: calc(var(--yr) * 4);
+
+            input {
+              margin-right: calc(var(--xr) / 2);
+            }
+          }
+        }
+      }
     }
   }
+}
+
+a {
+  color: var(--pr_color);
+  border-bottom: 1px solid color(var(--pr_color) alpha(-30%));
+  text-decoration: none;
 }
 
 .page {
@@ -115,6 +140,10 @@ h2 {
     .logo {
       padding-right: 60px;
       max-width: 23rem;
+
+      a {
+        border: 0;
+      }
 
       svg {
         display: block;

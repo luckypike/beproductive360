@@ -11,8 +11,16 @@
       = f.input :company
       = f.input :job
 
-      = f.input :session
-      = f.input :object
+      = f.input :session, as: :radio_buttons, collection: Member::SESSIONS.map(&:to_sym)
+      = f.input :object, as: :radio_buttons, collection: Member::OBJECTS.map(&:to_sym)
+      = f.input :hotel, as: :radio_buttons, collection: Member::HOTELS.map(&:to_sym)
+      .hotels_desc
+        | Подробная информация об отелях (фотографии, отзывы и месторасположение) на сайте Booking.com:
+        =< link_to 'Sheraton', 'https://www.booking.com/hotel/ru/sheraton-nizhny-novgorod-kremlin.ru.html', target: '_blank'
+        | ,
+        =< link_to 'Никола Хаус', 'https://www.booking.com/hotel/ru/nikola-house.ru.html', target: '_blank'
+        | ,
+        =< link_to 'Courtyard by Marriott', 'https://www.booking.com/hotel/ru/courtyard-by-marriott-nizhny-novgorod-city-center.ru.html', target: '_blank'
       / = f.association :user
 
     .form_actions

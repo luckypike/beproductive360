@@ -5,9 +5,7 @@ ru:
     required:
       text: 'Обязательно'
       mark: '*'
-      # You can uncomment the line below if you need to overwrite the whole required html.
-      # When using html, text and mark won't be used.
-      # html: '<abbr title="required">*</abbr>'
+
     error_notification:
       default_message: Пожалуйста, исправьте ошибки!
 
@@ -22,6 +20,32 @@ ru:
       member:
         session: Сессия
         object: Объект для экскурсии
+        hotel: Отель для проживания
+
+    options:
+      member:
+        hotel:
+          sheraton: Sheraton (5*)
+          nikola: Никола Хаус (4*)
+          courtyard: Courtyard by Marriott (4*)
+
+        session:
+          industry: Промышленность
+          goverment: Государственное управление
+          city: Управление городом
+          medical: Здравоохранение
+          education: Образование
+          social: Социальная защита
+          building: Строительство
+
+        object:
+          o1: Правительство Нижегородской области
+          o2: АО «ОКБМ Африкантов» (образцовое предприятие ГК «Росатом»)
+          o3: ЗАО «Узола» (образцовое предприятие приоритетной программы)
+          o4: АО «Гринатом» (образцы оптимизации офисных процессов)
+          o5: Образцовая гимназия
+          o6: Образцовая поликлиника
+          o7: Инжиниринговая компания АСЭ (образцы процессов проектирования и сооружения объектов)
 
     #   user:
     #     new:

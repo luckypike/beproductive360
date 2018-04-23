@@ -30,6 +30,7 @@
           background-color: color(white b(9%));
           padding: calc(var(--yr) * 3);
           border-radius: var(--yr);
+          border: 0;
         }
 
         .image {
