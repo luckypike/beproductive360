@@ -1,14 +1,20 @@
 .page.page_members
+  == render 'header'
+
   .page_members_list
     h1 Список ваших участников
     .list_members
       .list_members_item.add
         = link_to [:new, :member]
+          .image
+            | +
           .title
             | Новый участник
 
       - @members.each_with_index do |member, _|
         .list_members_item
           = link_to [:edit, member]
+            .image
+              = _ + 1
             .title
               = member.title

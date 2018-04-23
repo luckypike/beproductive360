@@ -9,6 +9,23 @@ import {
   Link
 } from 'react-router-dom';
 
+
+function JoinLink(props) {
+  return (
+    <Link to={props.join_path}>
+      Зарегистрироваться
+    </Link>
+  );
+}
+
+function MembersLink(props) {
+  return (
+    <a href={props.members_path}>
+      Зарегистрироваться
+    </a>
+  );
+}
+
 class Index extends React.Component {
   render () {
     return (
@@ -28,9 +45,11 @@ class Index extends React.Component {
             </div>
 
             <div className="join">
-              <Link to={this.props.join_path}>
-                Зарегистрироваться
-              </Link>
+              {this.props.auth ? (
+                <MembersLink {...this.props} />
+              ) : (
+                <JoinLink {...this.props} />
+              )}
             </div>
           </div>
 

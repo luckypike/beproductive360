@@ -3,3 +3,6 @@ ru:
     submit:
       create: Добавить
       update: Изменить
+
+  delete: Удалить
+  delete?: Удалить?

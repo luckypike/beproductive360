@@ -1,7 +1,7 @@
 @import '../css/vars.css';
 
 .page_member {
-  padding: calc(var(--yr) * 16) var(--xr);
+  padding: calc(var(--yr) * 8) var(--xr);
 
   &_form {
     max-width: 42rem;

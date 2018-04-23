@@ -1,7 +1,7 @@
 @import '../css/vars.css';
 
 .page_members {
-  padding: calc(var(--yr) * 16) var(--xr);
+  padding: calc(var(--yr) * 8) var(--xr);
 
   h1 {
     margin-bottom: calc(var(--yr) * 5);
@@ -23,11 +23,27 @@
         & > a {
           height: 100%;
           width: 100%;
-          display: block;
+          display: flex;
+          align-items: center;
+          color: black;
           text-decoration: none;
           background-color: color(white b(9%));
-          padding: calc(var(--yr) * 2) calc(var(--xr) * 1);
+          padding: calc(var(--yr) * 3);
           border-radius: var(--yr);
+        }
+
+        .image {
+          width: 30px;
+          height: 30px;
+          line-height: 30px;
+          text-align: center;
+          background-color: color(color(white b(9%)) blend(var(--pr_color) 60%));
+          border-radius: 50%;
+          margin-right: var(--xr);
+          overflow: hidden;
+          font-size: 26px;
+          font-weight: var(--fw_bold);
+          color: color(white b(9%));
         }
       }
 

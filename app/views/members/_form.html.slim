@@ -17,3 +17,4 @@
 
     .form_actions
       = f.button :submit
+      =< link_to t(:delete), f.object, data: { confirm: t(:delete?) }, method: :delete, class: [:btn, :btn_red] unless f.object.new_record?

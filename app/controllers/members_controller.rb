@@ -4,10 +4,11 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.json
   def index
-    @members = Member.order(id: :asc)
+    @members = Member.order(id: :asc).where(user: Current.user)
   end
 
   def show
+    redirect_to [:members]
   end
 
   def new

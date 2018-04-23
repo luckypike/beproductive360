@@ -108,6 +108,32 @@ h2 {
   }
 }
 
+.page {
+  &_header {
+    margin-bottom: calc(var(--yr) * 8);
+
+    .logo {
+      padding-right: 60px;
+      max-width: 23rem;
+
+      svg {
+        display: block;
+
+        .main {
+          fill: var(--pr_color);
+        }
+      }
+    }
+
+    @media (--s) {
+      .logo {
+        padding: calc(var(--yr) * 8) 0;
+        height: calc(var(--yr) * 32);
+      }
+    }
+  }
+}
+
 .btn {
   background-color: var(--pr_color);
   border: 0;
@@ -122,6 +148,12 @@ h2 {
   text-transform: uppercase;
   outline: none;
   min-width: 8rem;
+  text-decoration: none;
+  text-align: center;
+
+  &_red {
+    background-color: red;
+  }
 
   &:disabled {
     background-color: color(#fff blackness(+20%))
