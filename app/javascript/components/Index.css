@@ -107,7 +107,7 @@
   }
 
   &_intro {
-    padding: calc(var(--yr) * 8) var(--xr) calc(var(--yr) * 16);
+    padding: calc(var(--yr) * 8) var(--xr);
 
     .when {
       color: #1f4995;
@@ -128,6 +128,144 @@
       .who {
         max-width: 80%;
       }
+    }
+  }
+
+  &_schedule {
+    padding: calc(var(--yr) * 8) var(--xr) calc(var(--yr) * 16);
+    max-width: 50rem;
+
+    & > .title {
+      margin-bottom: calc(var(--yr) * 4);
+    }
+
+    .days {
+      &_item {
+        margin: 0 0 calc(var(--yr) * 8);
+
+        .date {
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          font-weight: var(--fw_semi);
+        }
+
+        .section {
+          /* background-color: color(white b(7%)); */
+          /* padding: calc(var(--yr) * 4) calc(var(--xr) * 1); */
+          border-radius: var(--yr);
+          margin: calc(var(--yr) * 2) 0 calc(var(--yr) * 2);
+
+          &_time {
+            margin: 0 0 calc(var(--yr) * 2);
+          }
+
+          &_title {
+            font-weight: var(--fw_semi);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin: 0 0 calc(var(--yr) * 2);
+          }
+
+          &_content {
+            &_item {
+              border-bottom: 1px solid color(white b(15%));
+              margin: 0 0 calc(var(--yr) * 2);
+              padding: 0 0 calc(var(--yr) * 2);
+
+              &:last-child {
+                padding: 0;
+                margin: 0;
+                border-bottom: 0;
+              }
+            }
+          }
+        }
+
+        .meta {
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: var(--yr);
+
+          &_item {
+            margin: var(--yr) var(--yr) 0 0;
+            border: 1px solid color(#333 alpha(-70%));
+            color: #333;
+            border-radius: var(--yr);
+            padding:  calc(var(--yr) * 0.5) calc(var(--yr) * 2);
+            font-size: calc(var(--yr) * 3.5);
+
+            &.industry {
+              color: #E67207;
+              border-color: color(#E67207 alpha(-70%));
+            }
+
+            &.medical {
+              color: #0a7a17;
+              border-color: color(#0a7a17 alpha(-70%));
+            }
+
+            &.goverment {
+              color: #A166AB;
+              border-color: color(#A166AB alpha(-70%));
+            }
+
+            &.city {
+              color: #1098AD;
+              border-color: color(#1098AD alpha(-70%));
+            }
+
+            &.education {
+              color: #be0101;
+              border-color: color(#cf970f alpha(-70%));
+            }
+
+            &.social {
+              color: #dca92f;
+              border-color: color(#cf970f alpha(-70%));
+            }
+          }
+        }
+      }
+    }
+
+    @media (--s) {
+      .days {
+        &_item {
+          margin: 0 0 calc(var(--yr) * 32);
+
+          .date {
+            margin-bottom: calc(var(--yr) * 4);
+          }
+
+          .section {
+            margin: 0 0 calc(var(--yr) * 12);
+            display: grid;
+            grid-template-columns: 10rem 1fr;
+
+
+            &_content {
+              grid-column: 1 / span 2;
+              padding-left: 10rem;
+
+              &_item {
+                margin: 0 0 calc(var(--yr) * 4);
+                padding: 0 0 calc(var(--yr) * 4);
+
+                &:last-child {
+                  padding: 0;
+                  margin: 0;
+                  border-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media (--m) {
+      margin: 0 calc(2 / 16 * 100%);
+
     }
   }
 }

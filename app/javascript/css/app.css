@@ -20,6 +20,23 @@ body {
   box-sizing: border-box;
 }
 
+h1, h2, h3 {
+  margin: 0;
+}
+
+h2 {
+  font-size: calc(var(--yr) * 5);
+  line-height: calc(var(--yr) * 7);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: var(--fw_bold);
+
+  @media (--s) {
+    font-size: calc(var(--yr) * 8.5);
+    line-height: calc(var(--yr) * 10);
+  }
+}
+
 .form {
   .error_notification {
     margin-bottom: calc(var(--yr) * 2);
