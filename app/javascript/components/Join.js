@@ -87,9 +87,11 @@ class Join extends React.Component {
         token: this.state.token,
         authenticity_token: this.props.authenticity_token
       })
-      .then(function(response) {
+      .then(response => {
         if(response.data.error) {
           console.log(response.data.error);
+        } else {
+          window.location.href = response.headers.location;
         }
         // console.log(response);
       });
