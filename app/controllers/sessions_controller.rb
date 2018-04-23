@@ -13,7 +13,13 @@ class SessionsController < ApplicationController
     unless logged_in?
       if params[:token].present?
         user = User.find_by(phone: params[:phone], token: params[:token])
-        auto_login(user, true) if user
+        if user
+          auto_login(user, true)
+          head :ok, location: [:members]
+        else
+          render json: { error: :wrong_token }
+        end
+
       else
         user = User.find_or_initialize_by(phone: params[:phone])
         user.token = rand.to_s[2..5]

@@ -11,6 +11,7 @@ gem 'webpacker'
 gem 'react-rails'
 
 gem 'sorcery'
+gem 'cancancan'
 
 gem 'slim-rails'
 gem 'simple_form'

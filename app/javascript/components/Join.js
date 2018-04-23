@@ -3,45 +3,45 @@ import PropTypes from 'prop-types';
 
 import axios from 'axios';
 
-import Cleave from 'cleave.js';
+// import Cleave from 'cleave.js';
+import Cleave from 'cleave.js/react';
 
 import Logo from '../images/logo_vert.svg';
+
+import {
+  Link
+} from 'react-router-dom';
 
 class Join extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      cleave: null,
       requested: false,
       phone: null,
       token: '',
       phoneCorrect: false
     }
 
-    this.phoneRef = React.createRef();
+    // this.phoneRef = React.createRef();
   }
 
   componentDidMount() {
+    // new Cleave(this.phoneRef.current, {
+    //   numericOnly: true,
+    //   prefix: '+7',
+    //   delimiters: [' ', ' ', '-', '-'],
+    //   blocks: [2, 3, 3, 2, 2],
+    //   onValueChanged: (e) => {
+    //     console.log('QQQ');
 
+    //   }
+    // });
 
 
   }
 
-  onPhoneFocus = (e) => {
-    new Cleave(e.target, {
-      numericOnly: true,
-      prefix: '+7',
-      delimiters: [' ', ' ', '-', '-'],
-      blocks: [2, 3, 3, 2, 2],
-      onValueChanged: (e) => {
-        this.setState({
-          phone: e.target.rawValue
-        }, function() {
-          this.checkPhone();
-        });
-      }
-    });
-  }
 
   checkPhone() {
     this.setState({
@@ -50,7 +50,11 @@ class Join extends React.Component {
   }
 
   onPhoneChange = (e) => {
-    console.log(e);
+    this.setState({
+      phone: e.target.rawValue
+    }, function() {
+      this.checkPhone();
+    });
   }
 
   onTokenChange = (e) => {
@@ -77,11 +81,18 @@ class Join extends React.Component {
   }
 
   confirmCode = (e) => {
-    axios.post(e.target.action, {
-      phone: this.state.phone,
-      token: this.state.token,
-      authenticity_token: this.props.authenticity_token
-    });
+    axios
+      .post(e.target.action, {
+        phone: this.state.phone,
+        token: this.state.token,
+        authenticity_token: this.props.authenticity_token
+      })
+      .then(function(response) {
+        if(response.data.error) {
+          console.log(response.data.error);
+        }
+        // console.log(response);
+      });
   }
 
   render () {
@@ -89,7 +100,9 @@ class Join extends React.Component {
       <div className="page page_join">
         <div className="page_join_form">
           <div className="logo">
-            <img src={Logo} />
+            <Link to={this.props.root_path}>
+              <img src={Logo} />
+            </Link>
           </div>
 
           <div className="form">
@@ -102,7 +115,17 @@ class Join extends React.Component {
                   <label>
                     Номер телефона
                   </label>
-                  <input type="tel" name="phone" disabled={this.state.requested} placeholder="+7 987 XXX-XX-XX" onFocus={this.onPhoneFocus} />
+                  <Cleave
+                    type="tel"
+                    disabled={this.state.requested}
+                    onChange={this.onPhoneChange}
+                    options={{
+                      prefix: '+7',
+                      delimiters: [' ', ' ', '-', '-'],
+                      blocks: [2, 3, 3, 2, 2],
+                      numericOnly: true
+                    }}
+                  />
                 </div>
 
                 {this.state.requested &&

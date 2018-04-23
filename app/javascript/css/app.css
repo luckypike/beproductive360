@@ -91,6 +91,7 @@ body {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   outline: none;
+  min-width: 8rem;
 
   &:disabled {
     background-color: color(#fff blackness(+20%))
