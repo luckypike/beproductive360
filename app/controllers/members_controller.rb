@@ -6,7 +6,7 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.json
   def index
-    @members = Member.order(id: :asc).where(user: Current.user)
+    @members = Member.order(last_name: :asc).where(user: Current.user)
   end
 
   def show
