@@ -41,6 +41,8 @@ class Index extends React.Component {
             </div>
 
             <div className="place">
+              16-17 мая 2018
+              <br />
               Нижний Новгород, Технопарк Анкудиновка
             </div>
 
@@ -60,7 +62,7 @@ class Index extends React.Component {
 
         <div className="page_index_intro">
           <div className="when">
-            16-17 мая 2018
+
           </div>
 
           <div className="who">
@@ -69,334 +71,340 @@ class Index extends React.Component {
           </div>
         </div>
 
-        <div className="page_index_schedule">
-          <div className="title">
-            <h2>
-              Программа форума
-            </h2>
-          </div>
-          <div className="days">
-            <div className="days_item">
-              <div className="date">
-                16 мая, среда
+        {false &&
+          <div className="page_index_schedule">
+            <div className="title">
+              <h1>
+                Программа форума
+              </h1>
+            </div>
+
+            <div className="days">
+              <div className="days_item first">
+                <div className="date">
+                  16 мая, среда
+                </div>
+
+                <div className="section">
+                  <div className="section_time">
+                    10:00 — 15:00
+                  </div>
+                  <div className="section_content">
+                    <div className="section_content_title bld">
+                      Прибытие и размещение участников
+                    </div>
+                  </div>
+                </div>
+
+                <div className="section">
+                  <div className="section_time">
+                    15:00 — 18:00
+                  </div>
+
+                  <div className="section_content">
+                    <div className="section_content_title bld">
+                      Осмотр образцовых предприятий Нижегородской области
+                    </div>
+
+                    <div className="section_content_item">
+                      1. Правительство Нижегородской области
+                    </div>
+                    <div className="section_content_item">
+                      2. АО «ОКБМ Африкантов» (образцовое предприятие ГК «Росатом»)
+                    </div>
+                    <div className="section_content_item">
+                      3. ЗАО «Узола» (образцовое предприятие приоритетной программы)
+                    </div>
+                    <div className="section_content_item">
+                      4. АО «Гринатом» (образцы оптимизации офисных процессов)
+                    </div>
+                    <div className="section_content_item">
+                      5. Образцовая гимназия
+                    </div>
+                    <div className="section_content_item">
+                      6. Образцовая поликлиника
+                    </div>
+                    <div className="section_content_item">
+                      7. Инжиниринговая компания АСЭ (образцы процессов проектирования и сооружения объектов)
+                    </div>
+                  </div>
+                </div>
+
+                <div className="section">
+                  <div className="section_time">
+                      19:00 — 21:00
+                  </div>
+
+                  <div className="section_content">
+                    <div className="section_content_title bld">
+                      Торжественный ужин
+                    </div>
+                    <div className="section_content_item">
+                      Приветствие Губернатора и открытие Форума
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className="section">
-                <div className="section_time">
-                  10:00 — 15:00
+              <div className="days_item second">
+                <div className="date">
+                  17 мая, четверг
                 </div>
-                <div className="section_title">
-                  Прибытие и размещение участников
-                </div>
-              </div>
 
-              <div className="section">
-                <div className="section_time">
-                  15:00 — 18:00
-                </div>
-                <div className="section_title">
-                  Осмотр образцовых предприятий Нижегородской области
-                </div>
-                <div className="section_content">
-                  <div className="section_content_item">
-                    1. Правительство Нижегородской области
+                <div className="section">
+                  <div className="section_time">
+                     08:30 — 09:30
                   </div>
-                  <div className="section_content_item">
-                    2. АО «ОКБМ Африкантов» (образцовое предприятие ГК «Росатом»)
-                  </div>
-                  <div className="section_content_item">
-                    3. ЗАО «Узола» (образцовое предприятие приоритетной программы)
-                  </div>
-                  <div className="section_content_item">
-                    4. АО «Гринатом» (образцы оптимизации офисных процессов)
-                  </div>
-                  <div className="section_content_item">
-                    5. Образцовая гимназия
-                  </div>
-                  <div className="section_content_item">
-                    6. Образцовая поликлиника
-                  </div>
-                  <div className="section_content_item">
-                    7. Инжиниринговая компания АСЭ (образцы процессов проектирования и сооружения объектов)
-                  </div>
-                </div>
-              </div>
 
-              <div className="section">
-                <div className="section_time">
-                    19:00 — 21:00
+                  <div className="section_content">
+                    <div className="section_content_title sub">
+                      Тематические завтраки: успешный опыт
+                    </div>
+
+                    <div className="section_content_item wln">
+                      <div className="meta">
+                        <div className="meta_item industry">Промышленность</div>
+                      </div>
+                      <span>
+                        Как мы будем делать digital в 2018? Маркетинг и технологии
+                      </span>
+                    </div>
+
+                    <div className="section_content_item wln">
+                      <div className="meta">
+                        <div className="meta_item goverment">Государственное управление</div>
+                      </div>
+                      <span>
+                        Города будущего. Взгляд на ускоренное развитие экономики
+                      </span>
+                    </div>
+                    <div className="section_content_item wln">
+                      <div className="meta">
+                        <div className="meta_item city">Управление городом</div>
+                      </div>
+                      <span>
+                        Мастер-класс: Как показать силу своего бренда
+                      </span>
+                    </div>
+                    <div className="section_content_item wln">
+                      <div className="meta">
+                        <div className="meta_item medical">Здравоохранение</div>
+                      </div>
+                      <span>
+                        Агентский digital-рынок. Проблемы, тренды, развитие
+                      </span>
+                    </div>
+                    <div className="section_content_item wln">
+                      <div className="meta">
+                        <div className="meta_item education">Образование</div>
+                      </div>
+                      <span>
+                        Медицина и технологии
+                      </span>
+                    </div>
+                    <div className="section_content_item wln">
+                      <div className="meta">
+                        <div className="meta_item social">Социальная защита</div>
+                      </div>
+                      <span>
+                        Новые Digital инструменты
+                      </span>
+                    </div>
+                    <div className="section_content_item wln">
+                      <div className="meta">
+                        <div className="meta_item building">Строительство</div>
+                      </div>
+                      <span>
+                        ГосDigital. Практика, реальность, перспективы
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <div className="section_title">
-                  Торжественный ужин
+
+                <div className="section">
+                  <div className="section_time">
+                    10:15 — 11:15
+                  </div>
+
+                  <div className="section_content">
+                    <div className="section_content_title bld">
+                      Пленарное заседание форума
+                    </div>
+
+                    <div className="section_content_item">
+                      Приветственное слово ключевых спикеров форума
+                    </div>
+                  </div>
                 </div>
-                <div className="section_content">
-                  Приветствие Губернатора и открытие Форума
+
+                <div className="section">
+                  <div className="section_time">
+                    11:30 — 13:00
+                  </div>
+
+                  <div className="section_content">
+                    <div className="section_content_title sub">
+                      Блок тематических сессий: способы решений
+                    </div>
+
+                    <div className="section_content_item wln">
+                      <div className="meta">
+                        <div className="meta_item industry">Промышленность</div>
+                      </div>
+                      <span>
+                        Как мы будем делать digital в 2018? Маркетинг и технологии
+                      </span>
+                    </div>
+
+                    <div className="section_content_item wln">
+                      <div className="meta">
+                        <div className="meta_item goverment">Государственное управление</div>
+                      </div>
+                      <span>
+                        Города будущего. Взгляд на ускоренное развитие экономики
+                      </span>
+                    </div>
+                    <div className="section_content_item wln">
+                      <div className="meta">
+                        <div className="meta_item city">Управление городом</div>
+                      </div>
+                      <span>
+                        Мастер-класс: Как показать силу своего бренда
+                      </span>
+                    </div>
+                    <div className="section_content_item wln">
+                      <div className="meta">
+                        <div className="meta_item medical">Здравоохранение</div>
+                      </div>
+                      <span>
+                        Агентский digital-рынок. Проблемы, тренды, развитие
+                      </span>
+                    </div>
+                    <div className="section_content_item wln">
+                      <div className="meta">
+                        <div className="meta_item education">Образование</div>
+                      </div>
+                      <span>
+                        Медицина и технологии
+                      </span>
+                    </div>
+                    <div className="section_content_item wln">
+                      <div className="meta">
+                        <div className="meta_item social">Социальная защита</div>
+                      </div>
+                      <span>
+                        Новые Digital инструменты
+                      </span>
+                    </div>
+                    <div className="section_content_item wln">
+                      <div className="meta">
+                        <div className="meta_item building">Строительство</div>
+                      </div>
+                      <span>
+                        ГосDigital. Практика, реальность, перспективы
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="section">
+                  <div className="section_time">
+                    13:00 — 14:00
+                  </div>
+
+                  <div className="section_content">
+                    <div className="section_content_title bld">
+                      Обед
+                    </div>
+                  </div>
+                </div>
+
+                <div className="section">
+                  <div className="section_time">
+                    14:00 — 15:30
+                  </div>
+
+                  <div className="section_content">
+                    <div className="section_content_title sub">
+                      Блок тематических сессий: способы решений
+                    </div>
+
+                    <div className="section_content_slide">
+                      <div className="section_content_item">
+                        <div className="meta">
+                          <div className="meta_item industry">Промышленность</div>
+                        </div>
+                        <span>
+                          Как построить экологически безвредный завод?
+                        </span>
+                      </div>
+
+                      <div className="section_content_item">
+                        <div className="meta">
+                          <div className="meta_item goverment">Государственное управление</div>
+                        </div>
+                        <span>
+                          Города будущего. Взгляд на ускоренное развитие экономики
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+
+                <div className="section">
+                  <div className="section_time">
+                    15:30 — 16:00
+                  </div>
+
+                  <div className="section_content">
+                    <div className="section_content_title bld">
+                      Кофе-брейк
+                    </div>
+                  </div>
+                </div>
+
+                <div className="section">
+                  <div className="section_time">
+                    16:00 — 18:00
+                  </div>
+
+                  <div className="section_content">
+                    <div className="section_content_title sub with_col">
+                      Блок тематических сессий: план действий
+                    </div>
+                  </div>
+
+                </div>
+
+                <div className="section">
+                  <div className="section_time">
+                    18:15 — 18:45
+                  </div>
+
+                  <div className="section_content">
+                    <div className="section_content_title bld">
+                      Подведение итогов дня
+                    </div>
+                  </div>
+                </div>
+
+                <div className="section">
+                  <div className="section_time">
+                    20:00 — 22:00
+                  </div>
+
+                  <div className="section_content">
+                    <div className="section_content_title bld">
+                      Ужин
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div className="days_item">
-              <div className="date">
-                17 мая, четверг
-              </div>
-
-              <div className="section">
-                <div className="section_time">
-                   08:30 — 09:30
-                </div>
-
-                <div className="section_title">
-                  Тематические завтраки: успешный опыт
-                </div>
-
-                <div className="section_content">
-                  <div className="section_content_item">
-                    Как мы будем делать digital в 2018? Маркетинг и технологии
-                    <div className="meta">
-                      <div className="meta_item industry">Промышленность</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    Города будущего. Взгляд на ускоренное развитие экономики
-                    <div className="meta">
-                      <div className="meta_item goverment">Государственное управление</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    Мастер-класс: Как показать силу своего бренда
-                    <div className="meta">
-                      <div className="meta_item city">Управление городом</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    Агентский digital-рынок. Проблемы, тренды, развитие
-                    <div className="meta">
-                      <div className="meta_item medical">Здравоохранение</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    Медицина и технологии
-                    <div className="meta">
-                      <div className="meta_item education">Образование</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    Новые Digital инструменты
-                    <div className="meta">
-                      <div className="meta_item social">Социальная защита</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    ГосDigital. Практика, реальность, перспективы
-                    <div className="meta">
-                      <div className="meta_item building">Строительство</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="section">
-                <div className="section_time">
-                  10:15 — 11:15
-                </div>
-
-                <div className="section_title">
-                  Пленарное заседание форума
-                </div>
-
-                <div className="section_content">
-                  Приветственное слово ключевых спикеров форума
-                </div>
-              </div>
-
-              <div className="section">
-                <div className="section_time">
-                   08:30 — 09:30
-                </div>
-
-                <div className="section_title">
-                  Блок тематических сессий: способы решений
-                </div>
-
-                <div className="section_content">
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item industry">Промышленность</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item goverment">Государственное управление</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item city">Управление городом</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item medical">Здравоохранение</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item education">Образование</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item social">Социальная защита</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item building">Строительство</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="section">
-                <div className="section_time">
-                  13:00 — 14:00
-                </div>
-
-                <div className="section_title">
-                  Обед
-                </div>
-              </div>
-
-              <div className="section">
-                <div className="section_time">
-                  14:00 — 15:30
-                </div>
-
-                <div className="section_title">
-                  Блок тематических сессий: способы решений
-                </div>
-
-                <div className="section_content">
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item industry">Промышленность</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item goverment">Государственное управление</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item city">Управление городом</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item medical">Здравоохранение</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item education">Образование</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item social">Социальная защита</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item building">Строительство</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-              <div className="section">
-                <div className="section_time">
-                  15:30 — 16:00
-                </div>
-
-                <div className="section_title">
-                  Кофе-брейк
-                </div>
-              </div>
-
-              <div className="section">
-                <div className="section_time">
-                  16:00 — 18:00
-                </div>
-
-                <div className="section_title">
-                  Блок тематических сессий: план действий
-                </div>
-
-                <div className="section_content">
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item industry">Промышленность</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item goverment">Государственное управление</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item city">Управление городом</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item medical">Здравоохранение</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item education">Образование</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item social">Социальная защита</div>
-                    </div>
-                  </div>
-                  <div className="section_content_item">
-                    <div className="meta">
-                      <div className="meta_item building">Строительство</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="section">
-                <div className="section_time">
-                  18:15 — 18:45
-                </div>
-
-                <div className="section_title">
-                  Подведение итогов дня
-                </div>
-              </div>
-
-              <div className="section">
-                <div className="section_time">
-                  20:00 — 22:00
-                </div>
-
-                <div className="section_title">
-                  Ужин
-                </div>
-              </div>
-
-            </div>
           </div>
-        </div>
+        }
       </div>
     );
   }

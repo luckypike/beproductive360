@@ -1,10 +1,10 @@
 class Member < ApplicationRecord
   belongs_to :user, default: -> { Current.user }
 
-  validates_presence_of :first_name, :last_name, :company, :session, :object
+  validates_presence_of :first_name, :last_name, :company, :session, :object, :email
 
   SESSIONS = %w(industry goverment city medical education social building)
-  HOTELS = %w(sheraton nikola courtyard)
+  HOTELS = %w(sheraton courtyard hampton)
   OBJECTS = %w(o1 o2 o3 o4 o5 o6 o7)
 
   def title

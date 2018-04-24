@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
+  enum role: { common: 0, editor: 1 }
+
   validates :phone, uniqueness: true, presence: true
 
   before_validation :clear_phone

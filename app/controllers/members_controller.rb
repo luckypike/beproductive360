@@ -14,7 +14,7 @@ class MembersController < ApplicationController
   end
 
   def new
-    @member = Member.new
+    @member = Member.new(date_arrival: Date.new(2018, 5, 16), date_departure: Date.new(2018, 5, 18))
   end
 
   def edit
@@ -51,6 +51,6 @@ class MembersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def member_params
-      params.require(:member).permit(:first_name, :middle_name, :last_name, :company, :job, :session, :object, :hotel)
+      params.require(:member).permit(:first_name, :middle_name, :last_name, :email, :date_arrival, :date_departure, :company, :job, :session, :object, :hotel)
     end
 end

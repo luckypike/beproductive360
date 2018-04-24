@@ -1,9 +1,8 @@
-@import 'normalize.css/normalize';
 @import './vars.css';
 
 body {
   font-size: calc(var(--yr) * 4);
-  line-height: calc(var(--yr) * 5);
+  line-height: calc(var(--yr) * 6);
   font-family: var(--ff_main);
   font-weight: var(--fw_main);
 
@@ -27,8 +26,6 @@ h1, h2, h3 {
 h1 {
   font-size: calc(var(--yr) * 6);
   line-height: calc(var(--yr) * 8);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
   font-weight: var(--fw_bold);
 
   @media (--s) {
@@ -79,8 +76,15 @@ h2 {
         color: red;
       }
 
+      .hint {
+        margin-top: calc(var(--yr) * 1);
+        font-size: calc(var(--yr) * 3.5);
+      }
+
       input[type=text],
       input[type=tel],
+      input[type=date],
+      input[type=email],
       input[type=number] {
         appearance: none;
         border: 0;
@@ -104,6 +108,12 @@ h2 {
         input {
           background: color(white blend(red 5%));
           /* box-shadow: inset 0 0 0 1px color(red alpha(-20%)); */
+        }
+      }
+
+      &.member_hotel {
+        .hint {
+          color: red;
         }
       }
 

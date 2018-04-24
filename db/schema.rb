@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_23_140714) do
+ActiveRecord::Schema.define(version: 2018_04_24_125055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 2018_04_23_140714) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "hotel"
+    t.string "email"
+    t.date "date_arrival"
+    t.date "date_departure"
     t.index ["user_id"], name: "index_members_on_user_id"
   end
 
@@ -40,6 +43,7 @@ ActiveRecord::Schema.define(version: 2018_04_23_140714) do
     t.string "remember_me_token"
     t.datetime "remember_me_token_expires_at"
     t.boolean "editor"
+    t.integer "role", default: 0
     t.index ["phone"], name: "index_users_on_phone", unique: true
     t.index ["remember_me_token"], name: "index_users_on_remember_me_token"
   end
