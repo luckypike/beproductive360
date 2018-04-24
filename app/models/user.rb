@@ -14,7 +14,7 @@ class User < ApplicationRecord
   end
 
   def send_token
-    Sms.message(phone, token)
+    Sms.message(phone, token) if Rails.env.production?
   end
 
   def clear_phone
