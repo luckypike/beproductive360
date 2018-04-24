@@ -4,6 +4,13 @@
   .page_members_list
     h1 Ваши участники
     .list_members
+      - if can? :all, Member
+        .list_members_item.all
+          = link_to [:all, :members]
+            .image
+            .title
+              | Все участники
+
       .list_members_item.add
         = link_to [:new, :member]
           .image

@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  resources :members
   root 'pages#index'
+
+  resources :members do
+    collection do
+      get :all
+    end
+  end
+
 
   get :join, to: 'sessions#new'
   post :join, to: 'sessions#create'

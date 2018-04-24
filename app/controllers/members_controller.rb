@@ -5,6 +5,10 @@ class MembersController < ApplicationController
 
   # GET /members
   # GET /members.json
+  def all
+    @members = Member.order(id: :desc)
+  end
+
   def index
     @members = Member.order(last_name: :asc).where(user: Current.user)
   end
@@ -32,7 +36,12 @@ class MembersController < ApplicationController
 
   def update
     if @member.update(member_params)
-      redirect_to [:members]
+      if params[:back] == 'all'
+        redirect_to [:all, :members]
+      else
+        redirect_to [:members]
+      end
+
     else
       render :new
     end

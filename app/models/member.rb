@@ -10,4 +10,8 @@ class Member < ApplicationRecord
   def title
     [last_name, first_name].map(&:strip).join(' ')
   end
+
+  def title_full
+    [last_name, first_name, middle_name].map(&:strip).join(' ')
+  end
 end

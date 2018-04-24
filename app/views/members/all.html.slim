@@ -1,0 +1,79 @@
+.page.page_members
+  == render 'header'
+
+  .page_members_list
+    = link_to 'Ваши участники', members_path, class: :back
+
+    h1 Все участники
+
+    .table_members
+      - @members.each_with_index do |member|
+        .table_members_item
+          .summary
+            | ##{member.id} #{member.title_full}
+            =< link_to "редактировать", [:edit, member, back: :all]
+
+          .all
+            .all_item
+              .label
+                = t('simple_form.labels.defaults.email')
+
+              .value
+                ' :
+                = member.email
+
+            .all_item
+              .label
+                = t('simple_form.labels.defaults.company')
+
+              .value
+                ' :
+                = member.company
+
+            .all_item
+              .label
+                = t('simple_form.labels.defaults.job')
+
+              .value
+                ' :
+                = member.job
+
+            .all_item
+              .label
+                | Прибытие
+
+              .value
+                ' :
+                = l(member.date_arrival) if member.date_arrival.present?
+
+            .all_item
+              .label
+                | Отъезд
+
+              .value
+                ' :
+                = l(member.date_departure) if member.date_departure.present?
+
+            .all_item
+              .label
+                | Учреждение
+
+              .value
+                ' :
+                = t("simple_form.options.member.object.#{member.object}") if member.object.present?
+
+            .all_item
+              .label
+                | Направление
+
+              .value
+                ' :
+                = t("simple_form.options.member.session.#{member.session}") if member.session.present?
+
+            .all_item
+              .label
+                | Отель
+
+              .value
+                ' :
+                = t("simple_form.options.member.hotel.#{member.hotel}") if member.hotel.present?

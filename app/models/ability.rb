@@ -29,7 +29,11 @@ class Ability
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
     if user.present?
-      can :manage, Member, user_id: user.id
+      can [:index, :create, :new, :update, :edit, :destroy], Member, user_id: user.id
+
+      if user.editor?
+        can [:manage], Member
+      end
     end
   end
 end

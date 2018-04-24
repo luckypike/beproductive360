@@ -4,6 +4,7 @@
     = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
     .form_inputs
+      = hidden_field_tag :back, params[:back] if params[:back].present?
       = f.input :last_name
       = f.input :first_name
       = f.input :middle_name
