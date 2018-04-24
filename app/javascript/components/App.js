@@ -7,6 +7,8 @@ import {
   Link, NavLink
 } from 'react-router-dom';
 
+import { YMInitializer } from 'react-yandex-metrika';
+
 import Index from './Index';
 import Join from './Join';
 
@@ -30,6 +32,7 @@ class App extends React.Component {
           <Route exact strict path={this.props.join_path} render={props => (
             <Join {...props} {...this.props} />
           )}/>
+          <YMInitializer accounts={[48634481]} version="2" />
         </React.Fragment>
       </Router>
     );
