@@ -14,10 +14,10 @@
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-router-dom": "^4.2.2",
+    "svg-react-loader": "^0.4.5",
     "react_ujs": "^2.4.4"
   },
   "devDependencies": {
-    "svg-react-loader": "^0.4.5",
     "webpack-dev-server": "2.11.2"
   }
 }
