@@ -556,6 +556,10 @@
           display: grid;
           grid-template-columns: 1fr 1fr;
           grid-gap: var(--xr);
+
+          &_item {
+            padding-right: var(--xr);
+          }
         }
 
         @media (--l) {
@@ -563,6 +567,108 @@
         }
       }
     }
+
+    @media (--m) {
+      margin: 0 calc(2 / 16 * 100%);
+    }
+  }
+
+  &_place {
+    padding: 1px var(--xr) calc(var(--yr) * 16);
+
+    &_wrapper {
+      background: color(var(--th_color) alpha(-85%));
+      margin-top: calc(var(--yr) * 40);
+    }
+
+    .image {
+      margin-top: calc(var(--yr) * -32);
+      background-color: #f1f1f1;
+      background-image: url('../images/place.jpg');
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      margin-bottom: calc(var(--yr) * 6);
+
+      &::before {
+        display: block;
+        content: '';
+        width: 100%;
+        position: relative;
+        z-index: -1;
+        padding-top: calc(4 / 5 * 100%);
+
+        @media (--s) {
+          padding-top: calc(9 / 16 * 100%);
+        }
+      }
+    }
+
+    .text {
+      .title {
+        font-weight: var(--fw_semi);
+        font-size: calc(var(--yr) * 4.5);
+        line-height: calc(var(--yr) * 5.5);
+
+        @media (--s) {
+          font-size: calc(var(--yr) * 6);
+          line-height: calc(var(--yr) * 8);
+        }
+      }
+
+      .desc {
+        color: var(--th_color);
+        margin-top: calc(var(--yr) * 2);
+
+        span {
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+        }
+      }
+    }
+
+
+    @media (--m) {
+      margin: 0 calc(2 / 16 * 100%);
+
+    }
+  }
+
+  &_partners {
+    padding: calc(var(--yr) * 8) var(--xr);
+
+    .list_partners {
+      display: flex;
+      flex-wrap: wrap;
+      /* grid-template-columns: 1fr 1fr; */
+
+      &_item {
+        margin-bottom: calc(var(--yr) * 4);
+        max-width: 100%;
+        margin-right: calc(var(--xr) * 2);
+
+        img {
+          display: block;
+          height: 65px;
+          /* max-width: 100%; */
+          /* margin: 0 auto; */
+        }
+
+
+        /* &:first-child {
+          grid-column: 1 / span 2;
+        } */
+      }
+
+      /* @media (--s) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        &_item {
+
+        }
+      } */
+    }
+
 
     @media (--m) {
       margin: 0 calc(2 / 16 * 100%);

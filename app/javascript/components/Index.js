@@ -5,6 +5,10 @@ import video from '../images/bg.mp4';
 
 import Logo from '!svg-react-loader!../images/logo_hor.svg';
 
+import MinecLogo from '../images/partners/minec.svg';
+import RALogo from '../images/partners/rosatom.svg';
+import NizLogo from '../images/partners/niz.svg';
+
 
 import {
   Link
@@ -727,6 +731,39 @@ class Index extends React.Component {
             </div>
           </div>
         </div>
+
+        <div className="page_index_place_wrapper">
+          <div className="page_index_place">
+            <div className="image"></div>
+            <div className="text">
+              <div className="title">
+                Пленарное заседание Форума и тематические сессии
+              </div>
+              <div className="desc">
+                <span>
+                  Технопарк «Анкудиновка»
+                </span>
+                <br />
+                ул. Академика Сахарова, 4
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="page_index_partners">
+          <div className="list_partners">
+            <div className="list_partners_item">
+              <img src={MinecLogo} />
+            </div>
+            <div className="list_partners_item">
+              <img src={RALogo} />
+            </div>
+            <div className="list_partners_item">
+              <img src={NizLogo} />
+            </div>
+          </div>
+        </div>
+
       </div>
     );
   }
