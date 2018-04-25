@@ -7,8 +7,8 @@ body {
   font-weight: var(--fw_main);
 
   @media (--s) {
-    font-size: calc(var(--yr) * 5);
-    line-height: calc(var(--yr) * 7);
+    font-size: calc(var(--yr) * 4.5);
+    line-height: calc(var(--yr) * 8);
   }
 }
 
@@ -21,6 +21,10 @@ body {
 
 h1, h2, h3 {
   margin: 0;
+}
+
+strong, b {
+  font-weight: var(--fw_semi);
 }
 
 h1 {

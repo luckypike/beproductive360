@@ -539,6 +539,194 @@ class Index extends React.Component {
             </div>
           </div>
         </div>
+
+        <div className="page_index_logistics">
+          <div className="in">
+            <div className="in_title">
+              Как добраться
+            </div>
+            <div className="in_list">
+              <div className="in_list_item">
+                <div className="icons">
+                  1 час
+                </div>
+
+                <div className="desc">
+                  <strong>От аэропорта</strong>
+                  <br />
+                  На такси время в пути до исторического центра пл. Минина 1 час. Используйте популярные приложения Яндекс Такси, Uber,  Gett. Для более комфортной поездки закажите трансфер заранее в «Новое такси Нижегородец».
+                </div>
+              </div>
+
+              <div className="in_list_item">
+                <div className="icons">
+                  20 мин.
+                </div>
+
+                <div className="desc">
+                  <strong>От ж.-д. вокзала</strong>
+                  <br />
+                  Нижегородский железнодорожный вокзал практически полностью закрыт на реконструкцию. Строительные работы могут создать дискомфорт.  От вокзала до исторического центра можно добраться на такси или метро до станции Горьковская.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="hotels">
+            <div className="hotels_title">
+              Где разместиться
+            </div>
+            <div className="hotels_list">
+              <div className="hotels_list_item">
+                <div className="icons">
+                  от 6900 руб.
+                </div>
+
+                <div className="desc">
+                  <strong>Sheraton 5*</strong>
+                  <br />
+                  Расположен в центре Нижнего Новгорода, всего в 2 минутах ходьбы от входа в Кремль
+                </div>
+              </div>
+
+              <div className="hotels_list_item">
+                <div className="icons">
+                  от 6000 руб.
+                </div>
+
+                <div className="desc">
+                  <strong>Courtyard by Mariott 4*</strong>
+                  <br />
+                  Отель с фитнес-центром находится в 20 минутах ходьбы от Нижегородского кремля.
+                </div>
+              </div>
+
+              <div className="hotels_list_item">
+                <div className="icons">
+                  от 4505 руб.
+                </div>
+
+                <div className="desc">
+                  <strong>Hampton by Hilton 3*</strong>
+                  <br />
+                  Расположен в культурно-исторической части Нижнего Новгорода, в 1,7 км от Нижегородского Кремля.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="objects">
+            <div className="objects_title">
+              Экскурсия по образцовым предприятиям Нижегородской области
+            </div>
+            <div className="objects_list">
+              <div className="objects_list_item">
+                <div className="icons">
+                  <div className="i">
+                    1
+                  </div>
+                  1,6 км
+                </div>
+
+                <div className="desc">
+                  <strong>Проектный офис правительства Нижегородской области</strong>
+                  <br />
+                  Минина, 16А
+                </div>
+              </div>
+
+              <div className="objects_list_item">
+                <div className="icons">
+                  <div className="i">
+                    2
+                  </div>
+                  9,6 км
+                </div>
+
+                <div className="desc">
+                  <strong>АО «ОКБМ им Африкантова» ГК «Росатом»</strong>
+                  <br />
+                  Бурнаковский проезд, 15
+                </div>
+              </div>
+
+              <div className="objects_list_item">
+                <div className="icons">
+                  <div className="i">
+                    3
+                  </div>
+                  13 км
+                </div>
+
+                <div className="desc">
+                  <strong>ООО «Узола»</strong>
+                  <br />
+                  Ларина, 7а
+                </div>
+              </div>
+
+              <div className="objects_list_item">
+                <div className="icons">
+                  <div className="i">
+                    4
+                  </div>
+                  14 км
+                </div>
+
+                <div className="desc">
+                  <strong>ОАО «Гринатом»</strong>
+                  <br />
+                  Проспект Ленина, 93Г
+                </div>
+              </div>
+
+              <div className="objects_list_item">
+                <div className="icons">
+                  <div className="i">
+                    5
+                  </div>
+                  3,8 км и 7,6 км
+                </div>
+
+                <div className="desc">
+                  <strong>Детская городская поликлиника №39 и Городская поликлиника №7</strong>
+                  <br />
+                  Тимирязева, 5 и Верхне-Печерская, 6
+                </div>
+              </div>
+
+              <div className="objects_list_item">
+                <div className="icons">
+                  <div className="i">
+                    6
+                  </div>
+                  9,7 км
+                </div>
+
+                <div className="desc">
+                  <strong>Православная гимназия им. Александра Невского</strong>
+                  <br />
+                  Московское шоссе, 106а
+                </div>
+              </div>
+
+              <div className="objects_list_item">
+                <div className="icons">
+                  <div className="i">
+                    7
+                  </div>
+                  1,7 км
+                </div>
+
+                <div className="desc">
+                  <strong>АО ИК «Атомстройэкспорт» ГК «Росатом»</strong>
+                  <br />
+                  Площадь Свободы, 3
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

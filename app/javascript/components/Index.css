@@ -133,7 +133,7 @@
   &_schedule {
     font-size: calc(var(--yr) * 3.5);
     line-height: calc(var(--yr) * 5);
-    padding: calc(var(--yr) * 8) var(--xr) calc(var(--yr) * 16);
+    padding: calc(var(--yr) * 8) var(--xr) 0;
 
     @media (--s) {
       font-size: calc(var(--yr) * 4.5);
@@ -423,6 +423,149 @@
           }
         }
       }
+    }
+  }
+
+  &_logistics {
+    padding: 0 var(--xr);
+
+    .in {
+      &_title {
+        font-weight: var(--fw_semi);
+        font-size: calc(var(--yr) * 4.5);
+        line-height: calc(var(--yr) * 5.5);
+        margin-bottom: calc(var(--yr) * 4);
+
+        @media (--s) {
+          font-size: calc(var(--yr) * 6);
+          line-height: calc(var(--yr) * 8);
+        }
+      }
+
+      &_list {
+        &_item {
+          margin-bottom: calc(var(--yr) * 8);
+
+          .icons {
+            margin-bottom: calc(var(--yr) * 4);
+            color: var(--th_color);
+            font-weight: var(--fw_semi);
+            font-size: calc(var(--yr) * 3.5);
+            line-height: calc(var(--yr) * 8);
+          }
+        }
+
+        @media (--s) {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: var(--xr);
+        }
+      }
+    }
+
+    .hotels {
+      &_title {
+        font-weight: var(--fw_semi);
+        font-size: calc(var(--yr) * 4.5);
+        line-height: calc(var(--yr) * 5.5);
+        margin-bottom: calc(var(--yr) * 4);
+
+        @media (--s) {
+          font-size: calc(var(--yr) * 6);
+          line-height: calc(var(--yr) * 8);
+        }
+      }
+
+      &_list {
+        &_item {
+          margin-bottom: calc(var(--yr) * 8);
+
+          .icons {
+            margin-bottom: calc(var(--yr) * 4);
+            color: var(--sc_color);
+            font-weight: var(--fw_semi);
+            font-size: calc(var(--yr) * 3.5);
+            line-height: calc(var(--yr) * 8);
+            padding-left: calc(var(--yr) * 8 + var(--xr) / 2);
+            background: url('../images/hotel.svg');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+          }
+        }
+
+        @media (--s) {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-gap: var(--xr);
+        }
+      }
+    }
+
+    .objects {
+      &_title {
+        font-weight: var(--fw_semi);
+        font-size: calc(var(--yr) * 4.5);
+        line-height: calc(var(--yr) * 5.5);
+        margin-bottom: calc(var(--yr) * 4);
+
+        @media (--s) {
+          font-size: calc(var(--yr) * 6);
+          line-height: calc(var(--yr) * 8);
+        }
+      }
+
+      &_list {
+        &_item {
+          margin-bottom: calc(var(--yr) * 8);
+
+          .icons {
+            margin-bottom: calc(var(--yr) * 4);
+            color: var(--sc_color);
+            font-weight: var(--fw_semi);
+            font-size: calc(var(--yr) * 3.5);
+            line-height: calc(var(--yr) * 8);
+            padding-left: calc(var(--yr) * 8 + var(--xr));
+            position: relative;
+
+            .i {
+              position: absolute;
+              left: 0;
+              top: 0;
+              height: calc(var(--yr) * 8);
+              width: calc(var(--yr) * 8);
+              border-radius: 50%;
+              border: 1px solid var(--sc_color);
+              text-align: center;
+            }
+
+            &::after {
+              position: absolute;
+              content: '';
+              height: 1px;
+              background: linear-gradient(to right, var(--sc_color), color(var(--sc_color) alpha(-100%)));
+              min-width: 10rem;
+              left: calc(var(--yr) * 8 + var(--xr));
+              top: 50%;
+              /* right: 0; */
+              transform: translateY(calc(var(--yr) * 2.5));
+            }
+          }
+        }
+
+        @media (--s) {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: var(--xr);
+        }
+
+        @media (--l) {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+      }
+    }
+
+    @media (--m) {
+      margin: 0 calc(2 / 16 * 100%);
     }
   }
 }
