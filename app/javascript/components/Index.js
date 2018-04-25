@@ -554,7 +554,7 @@ class Index extends React.Component {
                 <div className="desc">
                   <strong>От аэропорта</strong>
                   <br />
-                  На такси время в пути до исторического центра пл. Минина 1 час. Используйте популярные приложения Яндекс Такси, Uber,  Gett. Для более комфортной поездки закажите трансфер заранее в «Новое такси Нижегородец».
+                  На такси время в пути до исторического центра пл. Минина 1 час. Используйте популярные приложения Яндекс Такси, Uber,  Gett. Для более комфортной поездки закажите трансфер заранее в «Новое такси Нижегородец».
                 </div>
               </div>
 
@@ -566,7 +566,7 @@ class Index extends React.Component {
                 <div className="desc">
                   <strong>От ж.-д. вокзала</strong>
                   <br />
-                  Нижегородский железнодорожный вокзал практически полностью закрыт на реконструкцию. Строительные работы могут создать дискомфорт.  От вокзала до исторического центра можно добраться на такси или метро до станции Горьковская.
+                  Нижегородский железнодорожный вокзал практически полностью закрыт на реконструкцию. Строительные работы могут создать дискомфорт.  От вокзала до исторического центра можно добраться на такси или метро до станции Горьковская.
                 </div>
               </div>
             </div>
@@ -583,9 +583,9 @@ class Index extends React.Component {
                 </div>
 
                 <div className="desc">
-                  <strong>Sheraton 5*</strong>
+                  <strong>Sheraton 5*</strong>
                   <br />
-                  Расположен в центре Нижнего Новгорода, всего в 2 минутах ходьбы от входа в Кремль
+                  Расположен в центре Нижнего Новгорода, всего в 2 минутах ходьбы от входа в Кремль
                 </div>
               </div>
 
@@ -595,9 +595,9 @@ class Index extends React.Component {
                 </div>
 
                 <div className="desc">
-                  <strong>Courtyard by Mariott 4*</strong>
+                  <strong>Courtyard by Mariott 4*</strong>
                   <br />
-                  Отель с фитнес-центром находится в 20 минутах ходьбы от Нижегородского кремля.
+                  Отель с фитнес-центром находится в 20 минутах ходьбы от Нижегородского кремля.
                 </div>
               </div>
 
@@ -607,9 +607,9 @@ class Index extends React.Component {
                 </div>
 
                 <div className="desc">
-                  <strong>Hampton by Hilton 3*</strong>
+                  <strong>Hampton by Hilton 3*</strong>
                   <br />
-                  Расположен в культурно-исторической части Нижнего Новгорода, в 1,7 км от Нижегородского Кремля.
+                  Расположен в культурно-исторической части Нижнего Новгорода, в 1,7 км от Нижегородского Кремля.
                 </div>
               </div>
             </div>
@@ -629,9 +629,9 @@ class Index extends React.Component {
                 </div>
 
                 <div className="desc">
-                  <strong>Проектный офис правительства Нижегородской области</strong>
+                  <strong>Проектный офис правительства Нижегородской области</strong>
                   <br />
-                  Минина, 16А
+                  Минина, 16А
                 </div>
               </div>
 
@@ -644,9 +644,9 @@ class Index extends React.Component {
                 </div>
 
                 <div className="desc">
-                  <strong>АО «ОКБМ им Африкантова» ГК «Росатом»</strong>
+                  <strong>АО «ОКБМ им Африкантова» ГК «Росатом»</strong>
                   <br />
-                  Бурнаковский проезд, 15
+                  Бурнаковский проезд, 15
                 </div>
               </div>
 
@@ -661,7 +661,7 @@ class Index extends React.Component {
                 <div className="desc">
                   <strong>ООО «Узола»</strong>
                   <br />
-                  Ларина, 7а
+                  Ларина, 7а
                 </div>
               </div>
 
@@ -674,7 +674,7 @@ class Index extends React.Component {
                 </div>
 
                 <div className="desc">
-                  <strong>ОАО «Гринатом»</strong>
+                  <strong>ОАО «Гринатом»</strong>
                   <br />
                   Проспект Ленина, 93Г
                 </div>
@@ -691,7 +691,7 @@ class Index extends React.Component {
                 <div className="desc">
                   <strong>Детская городская поликлиника №39 и Городская поликлиника №7</strong>
                   <br />
-                  Тимирязева, 5 и Верхне-Печерская, 6
+                  Тимирязева, 5 и Верхне-Печерская, 6
                 </div>
               </div>
 
@@ -706,7 +706,7 @@ class Index extends React.Component {
                 <div className="desc">
                   <strong>Православная гимназия им. Александра Невского</strong>
                   <br />
-                  Московское шоссе, 106а
+                  Московское шоссе, 106а
                 </div>
               </div>
 
@@ -719,7 +719,7 @@ class Index extends React.Component {
                 </div>
 
                 <div className="desc">
-                  <strong>АО ИК «Атомстройэкспорт» ГК «Росатом»</strong>
+                  <strong>АО ИК «Атомстройэкспорт» ГК «Росатом»</strong>
                   <br />
                   Площадь Свободы, 3
                 </div>
