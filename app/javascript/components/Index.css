@@ -108,17 +108,9 @@
   &_intro {
     padding: calc(var(--yr) * 8) var(--xr);
 
-    .when {
-      color: #1f4995;
-      margin: 0 0 calc(var(--yr) * 8);
-      font-size: calc(var(--yr) * 8);
-      line-height: calc(var(--yr) * 9);
-      font-weight: var(--fw_bold);
-
-      @media (--s) {
-        font-size: calc(var(--yr) * 22);
-        line-height: calc(var(--yr) * 24);
-      }
+    .who {
+      font-size: calc(var(--yr) * 6);
+      line-height: calc(var(--yr) * 8);
     }
 
     @media (--m) {
@@ -126,6 +118,8 @@
 
       .who {
         max-width: 80%;
+        font-size: calc(var(--yr) * 8);
+        line-height: calc(var(--yr) * 10);
       }
     }
   }
