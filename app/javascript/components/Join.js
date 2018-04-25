@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import axios from 'axios';
 
-// import Cleave from 'cleave.js';
 import Cleave from 'cleave.js/react';
 
 import Logo from '../images/logo_vert.svg';
@@ -23,26 +22,12 @@ class Join extends React.Component {
       token: '',
       phoneCorrect: false
     }
-
-    // this.phoneRef = React.createRef();
   }
 
   componentDidMount() {
     if(this.props.auth) {
       window.location.href = this.props.members_path;
     }
-    // new Cleave(this.phoneRef.current, {
-    //   numericOnly: true,
-    //   prefix: '+7',
-    //   delimiters: [' ', ' ', '-', '-'],
-    //   blocks: [2, 3, 3, 2, 2],
-    //   onValueChanged: (e) => {
-    //     console.log('QQQ');
-
-    //   }
-    // });
-
-
   }
 
 
@@ -96,7 +81,6 @@ class Join extends React.Component {
         } else {
           window.location.href = response.headers.location;
         }
-        // console.log(response);
       });
   }
 
@@ -153,7 +137,5 @@ class Join extends React.Component {
     );
   }
 }
-
-
 
 export default Join;
