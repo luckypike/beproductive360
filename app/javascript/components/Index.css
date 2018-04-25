@@ -451,7 +451,20 @@
             color: var(--th_color);
             font-weight: var(--fw_semi);
             font-size: calc(var(--yr) * 3.5);
-            line-height: calc(var(--yr) * 8);
+            line-height: calc(var(--yr) * 6);
+            padding-top: calc(var(--yr) * 2);
+            padding-left: 150px;
+            background-position: left center;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+
+            &.air {
+              background-image: url('../images/air.png');
+            }
+
+            &.rr {
+              background-image: url('../images/rr.png');
+            }
           }
         }
 

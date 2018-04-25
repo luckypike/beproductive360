@@ -551,7 +551,7 @@ class Index extends React.Component {
             </div>
             <div className="in_list">
               <div className="in_list_item">
-                <div className="icons">
+                <div className="icons air">
                   1 час
                 </div>
 
@@ -563,7 +563,7 @@ class Index extends React.Component {
               </div>
 
               <div className="in_list_item">
-                <div className="icons">
+                <div className="icons rr">
                   20 мин.
                 </div>
 
