@@ -16,6 +16,14 @@
           .all
             .all_item
               .label
+                | Телефон
+
+              .value
+                ' :
+                = member.user.phone
+
+            .all_item
+              .label
                 = t('simple_form.labels.defaults.email')
 
               .value
