@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_24_125055) do
+ActiveRecord::Schema.define(version: 2018_04_26_083942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2018_04_24_125055) do
     t.string "email"
     t.date "date_arrival"
     t.date "date_departure"
+    t.string "checkout"
     t.index ["user_id"], name: "index_members_on_user_id"
   end
 
