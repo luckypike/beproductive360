@@ -285,6 +285,13 @@
             &_item {
               margin: calc(var(--yr) * 4) 0 0;
 
+              .fdt {
+                color: var(--sc_color);
+                font-weight: var(--fw_bold);
+                font-size: calc(var(--yr) * 3.5);
+                line-height: calc(var(--yr) * 4);
+              }
+
               b {
                 font-weight: var(--fw_semi);
               }
