@@ -32,7 +32,17 @@ class App extends React.Component {
           <Route exact strict path={this.props.join_path} render={props => (
             <Join {...props} {...this.props} />
           )}/>
-          <YMInitializer accounts={[48634481]} version="2" />
+          <YMInitializer
+            accounts={[48634481]}
+            version="2"
+            options={{
+              clickmap: true,
+              trackLinks: true,
+              accurateTrackBounce: true,
+              webvisor: true,
+              trackHash: true,
+            }}
+          />
         </React.Fragment>
       </Router>
     );

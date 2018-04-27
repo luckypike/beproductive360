@@ -1,6 +1,8 @@
 import 'normalize.css/normalize';
 import '../css/app.css';
 
+import 'core-js';
+
 var componentRequireContext = require.context('components', true)
 var ReactRailsUJS = require('react_ujs')
 ReactRailsUJS.useContext(componentRequireContext)

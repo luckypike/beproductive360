@@ -24,7 +24,7 @@ gem 'meta-tags'
 
 gem 'jbuilder', '~> 2.5'
 
-gem 'mini_magick', '~> 4.8'
+gem 'image_processing'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -41,5 +41,5 @@ group :development do
   gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-passenger'
-  gem 'capistrano-rbenv'  
+  gem 'capistrano-rbenv'
 end

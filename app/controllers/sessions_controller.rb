@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
         user.token = rand.to_s[2..5]
         user.save
         user.send_token
+        head :ok
       end
     end
   end
