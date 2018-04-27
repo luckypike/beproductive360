@@ -1,7 +1,7 @@
 class Member < ApplicationRecord
   belongs_to :user, default: -> { Current.user }
 
-  validates_presence_of :first_name, :last_name, :company, :session, :object, :email
+  validates_presence_of :first_name, :last_name, :company, :session, :email
 
   SESSIONS = %w(industry goverment city medical education social building)
   HOTELS = %w(sheraton courtyard hampton)
