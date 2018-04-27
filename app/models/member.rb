@@ -1,6 +1,8 @@
 class Member < ApplicationRecord
   belongs_to :user, default: -> { Current.user }
 
+  has_one_attached :image
+
   validates_presence_of :first_name, :last_name, :company, :session, :email
 
   SESSIONS = %w(industry goverment city medical education social building)

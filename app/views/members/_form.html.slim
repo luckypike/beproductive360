@@ -10,6 +10,9 @@
       = f.input :middle_name
       = f.input :email
 
+      = image_tag f.object.image.variant(resize: "200x200") if f.object.image.attached?
+      = f.input :image
+
       = f.input :company
       = f.input :job
 
