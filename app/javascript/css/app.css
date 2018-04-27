@@ -85,6 +85,25 @@ h2 {
         font-size: calc(var(--yr) * 3.5);
       }
 
+      .spoiler {
+        &_btn {
+          display: inline-block;
+          border-bottom: 1px solid #d9d9d9;
+          line-height: 1.5rem;
+          position: relative;
+          cursor: pointer;
+        }
+        &_inner {
+          display: none;
+        }
+
+        &.show {
+          .spoiler_inner {
+            display: block;
+          }
+        }
+      }
+
       input[type=text],
       input[type=tel],
       input[type=date],

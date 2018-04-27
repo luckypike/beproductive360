@@ -46,3 +46,22 @@
     .form_actions
       = f.button :submit
       =< link_to t(:delete), f.object, data: { confirm: t(:delete?) }, method: :delete, class: [:btn, :btn_red] unless f.object.new_record?
+
+
+javascript:
+  var spoilers = document.getElementsByClassName("spoiler_btn");
+  for(var i =0; i< spoilers.length; i++){
+    createOnClick(spoilers[i]);
+  }
+
+  function createOnClick(spoiler) {
+    spoiler.onclick = function () {
+      if(spoiler.parentElement.classList.contains("show")){
+        spoiler.parentElement.classList.remove("show");
+        spoiler.innerHTML = 'Показать описание';
+      } else {
+        spoiler.parentElement.classList.add("show");
+        spoiler.innerHTML = 'Скрыть описание';
+      }
+    }
+  }
