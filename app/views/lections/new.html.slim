@@ -1,0 +1,9 @@
+.page.page_member
+  == render 'header'
+
+  .page_member_form
+    = link_to 'Все лекции', lections_path, class: :back
+
+    h1 Новый лекция
+
+    == render 'form'

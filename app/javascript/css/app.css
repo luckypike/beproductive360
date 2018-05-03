@@ -108,7 +108,8 @@ h2 {
       input[type=tel],
       input[type=date],
       input[type=email],
-      input[type=number] {
+      input[type=number],
+      textarea {
         appearance: none;
         border: 0;
         background: color(white b(5%));

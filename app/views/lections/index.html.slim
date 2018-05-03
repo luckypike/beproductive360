@@ -1,0 +1,26 @@
+.page.page_lections
+  == render 'header'
+
+  .page_lections_list
+    h1 Лекции
+    br
+    = link_to 'New Lection', new_lection_path
+
+    .list_lection
+      table
+        thead
+          tr
+            th Title
+            / th Text
+            th
+            th
+            th
+
+        tbody
+          - @lections.each do |lection|
+            tr
+              td = lection.title
+              / td = lection.text
+              td = link_to 'Show', lection
+              td = link_to 'Edit', edit_lection_path(lection)
+              td = link_to 'Destroy', lection, data: { confirm: 'Are you sure?' }, method: :delete

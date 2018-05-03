@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :lections
 
   get :join, to: 'sessions#new'
   post :join, to: 'sessions#create'

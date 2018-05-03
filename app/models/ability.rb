@@ -33,6 +33,7 @@ class Ability
 
       if user.editor?
         can [:manage], Member
+        can [:manage], Lection
       end
     end
   end

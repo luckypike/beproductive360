@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @lection.title
+p
+  strong Text:
+  = @lection.text
+
+=> link_to 'Edit', edit_lection_path(@lection)
+'|
+=< link_to 'Back', lections_path

@@ -1,0 +1,21 @@
+@import '../css/vars.css';
+
+.page_lections {
+  padding: calc(var(--yr) * 8) var(--xr);
+
+  h1 {
+    margin-bottom: calc(var(--yr) * 5);
+  }
+
+  & > div {
+    max-width: 42rem;
+  }
+
+  &_list {
+
+  }
+
+  @media (--m) {
+    margin: 0 calc(2 / 16 * 100%);
+  }
+}
