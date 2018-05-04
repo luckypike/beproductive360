@@ -1,6 +1,10 @@
 .page.page_members
   == render 'header'
 
+  - if flash[:notice]
+    .page_members_notice
+      = flash[:notice]
+
   .page_members_list
     h1 Ваши участники
     .list_members

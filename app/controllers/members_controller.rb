@@ -28,7 +28,7 @@ class MembersController < ApplicationController
     @member = Member.new(member_params)
 
     if @member.save
-      redirect_to [:members]
+      redirect_to [:members], notice: 'Спыасибо за регистрацию! В ближайшее время мы пришлем вам подтверждение регистрации!'
     else
       render :new
     end

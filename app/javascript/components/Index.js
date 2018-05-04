@@ -42,14 +42,12 @@ class Index extends React.Component {
   }
 
   componentDidMount() {
-    this.updateSliders();
-    window.addEventListener('resize', this.updateSliders);
-
-
+    // this.updateSliders();
+    // window.addEventListener('resize', this.updateSliders);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.updateSliders);
+    // window.removeEventListener('resize', this.updateSliders);
   }
 
   updateSliders = (e) =>  {
@@ -119,7 +117,7 @@ class Index extends React.Component {
           </div>
 
           <div className="days">
-            <div className="days_item first">
+            <div className="days_item second">
               <div className="date">
                 <span>16</span> мая, среда
               </div>
@@ -127,102 +125,28 @@ class Index extends React.Component {
               <div className="section">
                 <div className="section_time">
                   <span>
-                    10:00 — 15:00
-                  </span>
-                </div>
-                <div className="section_content">
-                  <div className="section_content_title bld">
-                    Прибытие и размещение участников
-                  </div>
-                </div>
-              </div>
-
-              <div className="section">
-                <div className="section_time">
-                  <span>
-                    15:00 — 18:00
+                    09:00 — 19:00
                   </span>
                 </div>
 
                 <div className="section_content">
                   <div className="section_content_title bld">
-                    Осмотр образцовых предприятий Нижегородской области
+                    Программа Форума уточняется
                   </div>
 
                   <div className="section_content_item">
-                    <div className="fdt">
-                      15:00 — 17:00
-                    </div>
-                    <b>«Бережливое» правительство</b> (посещение проектного офиса правительства Нижегородской области)
-                  </div>
-
-                  <div className="section_content_item">
-                    <div className="fdt">
-                      1 группа: 11:00 – 14:30, 2 группа: 14:00 – 17:30
-                    </div>
-                    <b>Образец предприятия с развитой производственной системой</b> (посещение АО «ОКБМ им Африкантова» ГК «Росатом»)
-                  </div>
-
-                  <div className="section_content_item">
-                    <div className="fdt">
-                      13:00 – 18:00
-                    </div>
-                    <b>Внедрение методов «бережливого» производства на предприятии-участнике приоритетной программы «Повышение производительности труда»</b> (ООО «Узола»)
-                  </div>
-
-                  <div className="section_content_item">
-                    <div className="fdt">
-                      15:00 – 18:00
-                    </div>
-                    <b>Оптимизации офисных процессов</b> (посещение ОАО «Гринатом»)
-                  </div>
-
-                  <div className="section_content_item">
-                    <div className="fdt">
-                      13:20 – 18:00
-                    </div>
-                    <b>Оптимизация работы поликлиники</b> (посещение Детской  городской поликлиники №39 и Городской поликлиники №7)
-                  </div>
-
-                  <div className="section_content_item">
-                    <div className="fdt">
-                      15:00 – 17:30
-                    </div>
-                    <b>Внедрение «бережливых» технологий в образовательном учреждении</b> (посещение Православной гимназии им. Александра Невского)
-                  </div>
-
-                  <div className="section_content_item">
-                    <div className="fdt">
-                      15:30 – 18:00
-                    </div>
-                    <b>Оптимизация процессов проектирования и сооружения объектов</b> (посещение АО ИК «Атомстройэкспорт»  ГК «Росатом»)
+                    В ближайшее время подробная программа будет размещена, приносим извинения за неудобства.
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                   </div>
                 </div>
               </div>
 
-              <div className="section">
-                <div className="section_time">
-                  <span>
-                    19:00 — 21:00
-                  </span>
-                </div>
-
-                <div className="section_content">
-                  <div className="section_content_title bld">
-                    Торжественный ужин
-                  </div>
-                  <div className="section_content_item">
-                    Приветствие Губернатора и открытие Форума
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="days_item second">
-              <div className="date">
-                <span>17</span> мая, четверг
-              </div>
-
+              {/*
               <div className="section">
                 <div className="section_time">
                    <span>
@@ -567,6 +491,88 @@ class Index extends React.Component {
                   </div>
                 </div>
               </div>
+              */}
+
+            </div>
+
+            <div className="days_item first">
+              <div className="date">
+                <span>17</span> мая, четверг
+              </div>
+
+              {/*
+              <div className="section">
+                <div className="section_time">
+                  <span>
+                    10:00 — 15:00
+                  </span>
+                </div>
+                <div className="section_content">
+                  <div className="section_content_title bld">
+                    Прибытие и размещение участников
+                  </div>
+                </div>
+              </div>
+              */}
+
+              <div className="section">
+                <div className="section_time">
+                  <span>
+                    11:00 — 14:00
+                  </span>
+                </div>
+
+                <div className="section_content">
+                  <div className="section_content_title bld">
+                    Осмотр образцовых предприятий Нижегородской области
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    <b>«Бережливое» правительство</b> (посещение проектного офиса правительства Нижегородской области)
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    <b>Образец предприятия с развитой производственной системой</b> (посещение АО «ОКБМ им Африкантова» ГК «Росатом»)
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    <b>Внедрение методов «бережливого» производства на предприятии-участнике приоритетной программы «Повышение производительности труда»</b> (ООО «Узола»)
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    <b>Оптимизации офисных процессов</b> (посещение ОАО «Гринатом»)
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    <b>Оптимизация работы поликлиники</b> (посещение Детской  городской поликлиники №39 и Городской поликлиники №7)
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    <b>Внедрение «бережливых» технологий в образовательном учреждении</b> (посещение Православной гимназии им. Александра Невского)
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    <b>Оптимизация процессов проектирования и сооружения объектов</b> (посещение АО ИК «Атомстройэкспорт»  ГК «Росатом»)
+                  </div>
+                </div>
+              </div>
+
+              <div className="section">
+                <div className="section_time">
+                  <span>
+                    19:00 — 21:00
+                  </span>
+                </div>
+
+                <div className="section_content">
+                  <div className="section_content_title bld">
+                    Торжественный ужин
+                  </div>
+                  <div className="section_content_item">
+                    Приветствие Губернатора и открытие Форума
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -616,7 +622,19 @@ class Index extends React.Component {
                 <div className="desc">
                   <strong>Sheraton 5*</strong>
                   <br />
-                  Расположен в центре Нижнего Новгорода, всего в 2 минутах ходьбы от входа в Кремль
+                  Расположен в центре Нижнего Новгорода, всего в 2 минутах ходьбы от входа в Кремль.
+                </div>
+              </div>
+
+              <div className="hotels_list_item">
+                <div className="icons">
+                  от 5300 руб.
+                </div>
+
+                <div className="desc">
+                  <strong>Кулибин 5*</strong>
+                  <br />
+                  Парк-отель «Кулибин» расположен в 2,5 км от Нижегородского кремля.
                 </div>
               </div>
 
@@ -641,6 +659,18 @@ class Index extends React.Component {
                   <strong>Hampton by Hilton 3*</strong>
                   <br />
                   Расположен в культурно-исторической части Нижнего Новгорода, в 1,7 км от Нижегородского Кремля.
+                </div>
+              </div>
+
+              <div className="hotels_list_item">
+                <div className="icons">
+                  от 3600 руб.
+                </div>
+
+                <div className="desc">
+                  <strong>Ibis 3*</strong>
+                  <br />
+                  Современный отель расположен в Нижнем Новгороде, всего в 5 минутах ходьбы от Покровской улицы, исторического торгового центра города.
                 </div>
               </div>
             </div>

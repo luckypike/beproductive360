@@ -292,6 +292,18 @@
                 line-height: calc(var(--yr) * 4);
               }
 
+              &.with_bl {
+                padding: 0 0 calc(var(--yr) * 3);
+                margin: calc(var(--yr) * 4) 0 0;
+                border-bottom: 1px solid color(white b(+5%));
+
+                &:last-child {
+                  margin-bottom: 0;
+                  padding-bottom: 0;
+                  border-bottom: 0;
+                }
+              }
+
               b {
                 font-weight: var(--fw_semi);
               }
@@ -431,6 +443,8 @@
     padding: 0 var(--xr);
 
     .in {
+      margin-bottom: calc(var(--yr) * 8);
+
       &_title {
         font-weight: var(--fw_semi);
         font-size: calc(var(--yr) * 4.5);
@@ -478,6 +492,8 @@
     }
 
     .hotels {
+      margin-bottom: calc(var(--yr) * 8);
+
       &_title {
         font-weight: var(--fw_semi);
         font-size: calc(var(--yr) * 4.5);
@@ -516,6 +532,8 @@
     }
 
     .objects {
+      margin-bottom: calc(var(--yr) * 8);
+
       &_title {
         font-weight: var(--fw_semi);
         font-size: calc(var(--yr) * 4.5);

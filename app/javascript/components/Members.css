@@ -11,6 +11,14 @@
     max-width: 42rem;
   }
 
+  &_notice {
+    padding: var(--xr);
+    margin: var(--yr) 0 calc(var(--yr) * 4);
+    background: color(green a(-90%));
+    border: 1px solid color(green a(-60%));
+    border-radius: var(--yr);
+  }
+
   &_list {
     .list_members {
       display: grid;
