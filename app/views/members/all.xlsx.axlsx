@@ -1,0 +1,29 @@
+wb = xlsx_package.workbook
+
+wb.styles do |s|
+  bold =  s.add_style  :b => true
+  labels = ['Ф.И.О', 'Номер заявки', 'Телефон', 'Эл. почта', 'Организация', 'Должность', 'Прибытие', 'Отъезд', 'Чекаут', 'Учреждение', 'Направление', 'Отель']
+  Member.states.keys.each do |key|
+    wb.add_worksheet(name: t("enums.member.state.#{key.to_s}")) do |sheet|
+      sheet.add_row labels, :b => true
+
+      @members.select{|m| m.state == key}.each do |member|
+        row = []
+        row.push(member.title_full)
+        row.push(member.id)
+        row.push(member.user.phone)
+        row.push(member.email)
+        row.push(member.company)
+        row.push(member.job)
+        member.date_arrival.present? ? row.push(member.date_arrival) : row.push('')
+        member.date_departure? ? row.push(member.date_departure) : row.push('')
+        row.push(member.checkout)
+        member.object.present? ? row.push(t("simple_form.options.member.object.#{member.object}")) : row.push('')
+        member.session? ? row.push(t("simple_form.options.member.session.#{member.session}")) : row.push('')
+        member.hotel? ? row.push(t("simple_form.options.member.hotel.#{member.hotel}")) : row.push('')
+
+        sheet.add_row row
+      end
+    end
+  end
+end

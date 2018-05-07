@@ -20,6 +20,9 @@
   }
 
   &_list {
+    .sheet_link {
+      margin-bottom: var(--yr);
+    }
     .list_members {
       display: grid;
       grid-template-columns: 1fr;

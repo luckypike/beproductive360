@@ -31,6 +31,9 @@ gem 'image_processing'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'axlsx', '3.0.0.pre', github: 'randym/axlsx'
+gem 'axlsx_rails'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

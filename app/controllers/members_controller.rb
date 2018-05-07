@@ -8,6 +8,11 @@ class MembersController < ApplicationController
   # GET /members.json
   def all
     @members = Member.order(id: :desc)
+
+    respond_to do |format|
+      format.html
+      format.xlsx
+    end
   end
 
   def index

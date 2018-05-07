@@ -6,6 +6,9 @@
 
     h1 Все участники
 
+    .sheet_link
+      = link_to 'Выгрузить список в файл', '/members/all.xlsx'
+
     .table_members
       - @members.each_with_index do |member, index|
         .table_members_item
@@ -15,10 +18,10 @@
             =< link_to "редактировать", [:edit, member, back: :all]
             br
             - if member.undef?
-              =< link_to "Подтвердить", [member, :accept], method: :post
-              =< link_to "Отклонить", [member, :reject], method: :post
+              =< link_to "Подтвердить", [member, :accept], method: :post, class: [:state, :accepted]
+              =< link_to "Отклонить", [member, :reject], method: :post, class: [:state, :rejected]
             - elsif member.rejected?
-              =< link_to "Подтвердить", [member, :reaccept], method: :post
+              =< link_to "Подтвердить", [member, :reaccept], method: :post, class: [:state, :accepted]
 
 
           .all
