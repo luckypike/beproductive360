@@ -45,11 +45,13 @@ class Member < ApplicationRecord
 
   def send_text
     if accepted?
-      msg = "Заявка ##{id} одобрена"
+      msg = "№#{id}(#{title}) одобрен"
     elsif rejected?
-      msg = "Заявка ##{id} отклонена"
+      msg = "№#{id}(#{title}) отклонен"
     end
 
-    Sms.message(user.phone, msg) if Rails.env.production?
+    p msg
+
+    # Sms.message(user.phone, msg) if Rails.env.production?
   end
 end
