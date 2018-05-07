@@ -31,7 +31,7 @@ class Member < ApplicationRecord
 
   validates_presence_of :first_name, :last_name, :company, :session, :email, :state
 
-  SESSIONS = %w(industry goverment city medical education social building)
+  SESSIONS = %w(industry goverment medical education social building)
   HOTELS = %w(sheraton kulibin courtyard hampton ibis)
   OBJECTS = %w(o1 o2 o3 o4 o5 o6 o7)
 
@@ -45,7 +45,7 @@ class Member < ApplicationRecord
 
   def send_text
     if accepted?
-      msg = "Заявка ##{id} принята"
+      msg = "Заявка ##{id} одобрена"
     elsif rejected?
       msg = "Заявка ##{id} отклонена"
     end
