@@ -16,6 +16,9 @@ gem 'cancancan'
 gem 'slim-rails'
 gem 'simple_form'
 
+gem 'enum_help'
+gem 'stateful_enum'
+
 gem 'addressable'
 
 gem 'rails-i18n'

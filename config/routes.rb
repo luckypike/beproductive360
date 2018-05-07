@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     collection do
       get :all
     end
+
+    post :accept, to: 'members#accept'
+    post :reject, to: 'members#reject'
+    post :reaccept, to: 'members#reaccept'
   end
 
   resources :lections

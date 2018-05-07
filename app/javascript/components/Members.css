@@ -74,6 +74,16 @@
         .summary {
           font-weight: var(--fw_bold);
 
+          .state {
+            &.accepted {
+              color: green;
+            }
+
+            &.rejected {
+              color: red;
+            }
+          }
+
           .id {
             margin-right: calc(var(--xr) / 2);
           }

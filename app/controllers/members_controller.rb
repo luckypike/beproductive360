@@ -2,6 +2,7 @@ class MembersController < ApplicationController
   load_and_authorize_resource
 
   before_action :set_member, only: [:show, :edit, :update, :destroy]
+  before_action :set_member_post, only: [:accept, :reject, :reaccept]
 
   # GET /members
   # GET /members.json
@@ -18,7 +19,7 @@ class MembersController < ApplicationController
   end
 
   def new
-    @member = Member.new(date_arrival: Date.new(2018, 5, 16), date_departure: Date.new(2018, 5, 18))
+    @member = Member.new(date_arrival: Date.new(2018, 5, 16), date_departure: Date.new(2018, 5, 18), state: :undef)
   end
 
   def edit
@@ -28,7 +29,7 @@ class MembersController < ApplicationController
     @member = Member.new(member_params)
 
     if @member.save
-      redirect_to [:members], notice: 'Спыасибо за регистрацию! В ближайшее время мы пришлем вам подтверждение регистрации!'
+      redirect_to [:members], notice: 'Спасибо за регистрацию! В ближайшее время мы пришлем вам подтверждение регистрации!'
     else
       render :new
     end
@@ -52,14 +53,33 @@ class MembersController < ApplicationController
     redirect_to [:members]
   end
 
+  def accept
+    @member.accept!
+    redirect_to [:all, :members]
+  end
+
+  def reject
+    @member.reject!
+    redirect_to [:all, :members]
+  end
+
+  def reaccept
+    @member.reaccept!
+    redirect_to [:all, :members]
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_member
       @member = Member.find(params[:id])
     end
 
+    def set_member_post
+      @member = Member.find(params[:member_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def member_params
-      params.require(:member).permit(:first_name, :middle_name, :last_name, :email, :date_arrival, :date_departure, :checkout, :company, :job, :session, :object, :hotel, :image)
+      params.require(:member).permit(:first_name, :middle_name, :last_name, :email, :date_arrival, :date_departure, :checkout, :company, :job, :session, :object, :hotel, :image, :state)
     end
 end

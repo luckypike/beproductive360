@@ -10,8 +10,16 @@
       - @members.each_with_index do |member|
         .table_members_item
           .summary
-            | ##{member.id} #{member.title_full}
+            span.state class="#{member.state}"
+              | ##{member.id} #{member.title_full}
             =< link_to "редактировать", [:edit, member, back: :all]
+            br
+            - if member.undef?
+              =< link_to "Подтвердить", [member, :accept], method: :post
+              =< link_to "Отклонить", [member, :reject], method: :post
+            - elsif member.rejected?
+              =< link_to "Подтвердить", [member, :reaccept], method: :post
+
 
           .all
             .all_item

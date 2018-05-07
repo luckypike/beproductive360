@@ -142,7 +142,8 @@ h2 {
         }
       }
 
-      &.radio_buttons {
+      &.radio_buttons,
+      &.enum_radio_buttons {
         .radio {
           display: block;
           margin-bottom: calc(var(--yr) * 2);
