@@ -7,11 +7,11 @@
     h1 Все участники
 
     .table_members
-      - @members.each_with_index do |member|
+      - @members.each_with_index do |member, index|
         .table_members_item
           .summary
             span.state class="#{member.state}"
-              | ##{member.id} #{member.title_full}
+              | #{@members.length - index}. #{member.title_full}
             =< link_to "редактировать", [:edit, member, back: :all]
             br
             - if member.undef?
@@ -29,6 +29,14 @@
               .value
                 ' :
                 = member.user.phone
+
+            .all_item
+              .label
+                | Номер заявки
+
+              .value
+                | : #
+                = member.id
 
             .all_item
               .label

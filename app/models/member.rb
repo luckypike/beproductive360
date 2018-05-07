@@ -1,14 +1,26 @@
 class Member < ApplicationRecord
   enum state: { undef: 1, rejected: 2, accepted: 3} do
     event :accept do
+      after do
+        self.send_text
+      end
+
       transition :undef => :accepted
     end
 
     event :reject do
+      after do
+        self.send_text
+      end
+
       transition :undef => :rejected
     end
 
     event :reaccept do
+      after do
+        self.send_text
+      end
+
       transition :rejected => :accepted
     end
   end
@@ -29,5 +41,15 @@ class Member < ApplicationRecord
 
   def title_full
     [last_name, first_name, middle_name].map(&:strip).join(' ')
+  end
+
+  def send_text
+    if accepted?
+      msg = "Заявка ##{id} принята"
+    elsif rejected?
+      msg = "Заявка ##{id} отклонена"
+    end
+
+    Sms.message(user.phone, msg) if Rails.env.production?
   end
 end
