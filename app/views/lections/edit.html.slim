@@ -1,8 +1,9 @@
-h1 Editing lection
+.page.page_member
+  == render 'header'
 
-== render 'form'
+  .page_member_form
+    = link_to 'Все лекции', lections_path, class: :back
 
-=> link_to 'Show', @lection
-'|
-=< link_to 'Back', lections_path
+    h1 Редактирование лекции
 
+    == render 'form'

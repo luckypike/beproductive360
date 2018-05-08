@@ -21,6 +21,8 @@ gem 'stateful_enum'
 
 gem 'addressable'
 
+gem 'redcarpet'
+
 gem 'rails-i18n'
 
 gem 'meta-tags'

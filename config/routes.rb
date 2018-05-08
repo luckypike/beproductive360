@@ -11,7 +11,11 @@ Rails.application.routes.draw do
     post :reaccept, to: 'members#reaccept'
   end
 
-  resources :lections
+  resources :lections do
+    collection do
+      get :list
+    end
+  end
 
   get :join, to: 'sessions#new'
   post :join, to: 'sessions#create'

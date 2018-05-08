@@ -231,11 +231,48 @@
             min-height: 55px;
             width: 80%;
 
+            &_place {
+              font-size: calc(var(--yr) * 3.5);
+              line-height: calc(var(--yr) * 5);
+            }
+
             &_slider {
+
+
               .swiper {
+                &-container {
+                  padding-bottom: calc(var(--yr) * 12);
+                }
+
+                &-pagination {
+                  bottom: 0;
+
+                }
+
                 &-slide {
                   width: 90%;
                   padding-right: calc(var(--xr) * 2);
+
+                  .desc {
+                    font-size: calc(var(--yr) * 3);
+                    line-height: calc(var(--yr) * 4);
+
+                    @media (--s) {
+                      font-size: calc(var(--yr) * 4);
+                      line-height: calc(var(--yr) * 5.5);
+
+                    }
+
+                    ul {
+                      li {
+                        /* padding-left: 0; */
+
+                        &::before {
+                          /* content: '-'; */
+                        }
+                      }
+                    }
+                  }
 
                   &:last-child {
                     padding-right: 0;
@@ -243,7 +280,7 @@
                   }
                 }
 
-                @media (--m) {
+                /* @media (--m) {
                   &-wrapper {
                     flex-wrap: wrap;
                   }
@@ -259,7 +296,7 @@
                       border-bottom: 0;
                     }
                   }
-                }
+                } */
               }
             }
 
@@ -324,6 +361,7 @@
 
         .meta {
           display: flex;
+          margin-bottom: calc(var(--yr) * 2);
           flex-wrap: wrap;
 
           &_item {
@@ -370,12 +408,7 @@
     @media (--s) {
       .days {
         &_item {
-          .section {
-            margin-right: calc(2 / 12 * 100%);
 
-            &_content {
-            }
-          }
         }
       }
     }
@@ -386,6 +419,10 @@
       .days {
         &_item {
           position: relative;
+
+          .section {
+            margin-right: calc(2 / 12 * 100%);
+          }
 
           .date {
             position: absolute;
