@@ -7,6 +7,10 @@ class LectionsController < ApplicationController
     @lections = Lection.all
   end
 
+  def list
+    @lections = Lection.order(id: :desc)
+  end
+
   def show
   end
 

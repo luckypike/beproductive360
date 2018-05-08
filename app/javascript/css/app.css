@@ -51,6 +51,27 @@ h2 {
   }
 }
 
+p {
+  margin: 0 0 calc(var(--yr) * 2);
+}
+
+ul {
+  margin: 0 0 calc(var(--yr) * 2);
+  padding-left: 0;
+
+  li {
+    list-style: none;
+    margin-bottom: var(--yr);
+    padding-left: 1.4em;
+
+    &::before {
+      content: '—';
+      margin-right: 0.4em;
+      margin-left: -1.4em;
+    }
+  }
+}
+
 .form {
   .error_notification {
     margin-bottom: calc(var(--yr) * 2);

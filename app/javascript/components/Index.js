@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import axios from 'axios';
+
 import video from '../images/bg.mp4';
 
 import Logo from '!svg-react-loader!../images/logo_hor.svg';
@@ -37,39 +39,48 @@ class Index extends React.Component {
   constructor(props) {
     super(props);
 
-    this.swRef = React.createRef();
+    this.state = {
+      lections: null
+    }
+
     this.swipers = undefined;
   }
 
   componentDidMount() {
-    // this.updateSliders();
-    // window.addEventListener('resize', this.updateSliders);
+    this.fetchLections();
   }
 
   componentWillUnmount() {
-    // window.removeEventListener('resize', this.updateSliders);
   }
 
-  updateSliders = (e) =>  {
-    let s = getComputedStyle(this.swRef.current);
-
-    if(s.flexWrap == 'wrap') {
-      if(this.swipers != undefined) {
-        this.swipers.map(s => s.destroy(true, true));
-        this.swipers = undefined;
-      }
-    } else {
-      if(this.swipers == undefined) {
-        const swipers = new Swiper('.swiper-container', {
-          slidesPerView: 'auto',
+  fetchLections() {
+    axios.get(this.props.list_lections_path + '.json')
+      .then(res => {
+        let lections = {};
+        res.data.map((l) =>  {
+          lections[l.id] = l;
         });
 
-        this.swipers = swipers;
-      }
-    }
+
+        this.setState({
+          lections: lections
+        }, function() {
+          const swipers = new Swiper('.swiper-container', {
+            slidesPerView: 'auto',
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+            },
+          });
+
+          this.swipers = swipers;
+        });
+      });
   }
 
   render () {
+    const lections = this.state.lections;
+
     return (
       <div className="page page_index">
         <div className="page_index_header_wrapper">
@@ -125,191 +136,147 @@ class Index extends React.Component {
               <div className="section">
                 <div className="section_time">
                   <span>
-                    09:00 — 19:00
+                    08:00 – 11:00
                   </span>
                 </div>
 
                 <div className="section_content">
                   <div className="section_content_title bld">
-                    Программа Форума уточняется
+                    Прибытие, размещение и регистрация участников
                   </div>
 
-                  <div className="section_content_item">
-                    В ближайшее время подробная программа будет размещена, приносим извинения за неудобства.
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                  <div className="section_content_place">
+                    Отели Нижнего Новгорода
                   </div>
                 </div>
               </div>
 
-              {/*
               <div className="section">
                 <div className="section_time">
-                   <span>
-                     08:30 — 09:30
-                   </span>
+                  <span>
+                    11:00 – 12:00
+                  </span>
                 </div>
 
                 <div className="section_content">
-                  <div className="section_content_title sub">
-                    Деловой завтрак: истории успеха
+                  <div className="section_content_title bld">
+                    Регистрация участников Форума, приветственный кофе
                   </div>
 
-                  <div className="section_content_desc">
-                    Темы уточняются
+                  <div className="section_content_place">
+                    Технопарк «Анкудиновка»
+                  </div>
+                </div>
+              </div>
+
+              <div className="section">
+                <div className="section_time">
+                  <span>
+                    12:00 – 12:30
+                  </span>
+                </div>
+
+                <div className="section_content">
+                  <div className="section_content_title bld">
+                    Торжественное открытие форума
                   </div>
 
-                  <div className="section_content_slider">
-                    <div className="swiper-container">
-                      <div className="swiper-wrapper">
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item industry">Промышленность</div>
+                  <div className="section_content_place">
+                    Технопарк «Анкудиновка»
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    Горьков С.Н., Председатель правления Внешэкономбанк
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    Никитин Г.С., Врио Губернатора Нижегородской области
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    Орешкин М.С., Министр экономического развития Российской Федерации
+                  </div>
+                </div>
+              </div>
+
+              {lections &&
+                <div className="section">
+                  <div className="section_time">
+                    <span>
+                      12:45 – 14:30
+                    </span>
+                  </div>
+
+                  <div className="section_content">
+                    <div className="section_content_title bld">
+                      Сессия 1: истории успеха и цели
+                    </div>
+
+                    <div className="section_content_place">
+                      Технопарк «Анкудиновка»
+                    </div>
+
+                    <div className="section_content_slider">
+                      <div className="swiper-container">
+                        <div className="swiper-wrapper">
+                          <div className="section_content_item swiper-slide">
+                            <div className="meta">
+                              <div className="meta_item goverment">Государственное управление</div>
+                            </div>
+
+                            <div className="desc" dangerouslySetInnerHTML={{__html: lections[1].text_md}} />
                           </div>
-                          <span>
-                          </span>
+
+                          <div className="section_content_item swiper-slide">
+                            <div className="meta">
+                              <div className="meta_item industry">Промышленность</div>
+                            </div>
+                            <div className="desc" dangerouslySetInnerHTML={{__html: lections[3].text_md}} />
+                          </div>
+
+                          <div className="section_content_item swiper-slide">
+                            <div className="meta">
+                              <div className="meta_item building">Строительство</div>
+                            </div>
+                            <div className="desc" dangerouslySetInnerHTML={{__html: lections[5].text_md}} />
+                          </div>
+
+                          <div className="section_content_item swiper-slide">
+                            <div className="meta">
+                              <div className="meta_item medical">Здравоохранение</div>
+                            </div>
+                            <div className="desc" dangerouslySetInnerHTML={{__html: lections[7].text_md}} />
+                          </div>
+                          <div className="section_content_item swiper-slide">
+                            <div className="meta">
+                              <div className="meta_item education">Образование</div>
+                            </div>
+                            <div className="desc" dangerouslySetInnerHTML={{__html: lections[9].text_md}} />
+                          </div>
+                          <div className="section_content_item swiper-slide">
+                            <div className="meta">
+                              <div className="meta_item social">Социальная защита</div>
+                            </div>
+                            <div className="desc" dangerouslySetInnerHTML={{__html: lections[12].text_md}} />
+                          </div>
                         </div>
 
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item goverment">Государственное управление</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item medical">Здравоохранение</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item education">Образование</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item social">Социальная защита</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item building">Строительство</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
+                        <div className="swiper-pagination"></div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              }
 
               <div className="section">
                 <div className="section_time">
                   <span>
-                    10:15 — 11:15
+                    14:30 – 15:30
                   </span>
                 </div>
 
                 <div className="section_content">
-                  <div className="section_content_title bld">
-                    Пленарное заседание форума
-                  </div>
-
-                  <div className="section_content_item">
-                    Приветственное слово ключевых спикеров форума
-                  </div>
-                </div>
-              </div>
-
-              <div className="section">
-                <div className="section_time">
-                  <span>
-                    11:30 — 13:00
-                  </span>
-                </div>
-
-                <div className="section_content">
-                  <div className="section_content_title sub">
-                    Сессия 1: цели и барьеры
-                  </div>
-
-                  <div className="section_content_desc">
-                    Темы уточняются
-                  </div>
-
-                  <div className="section_content_slider">
-                    <div className="swiper-container">
-                      <div className="swiper-wrapper" ref={this.swRef}>
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item industry">Промышленность</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item goverment">Государственное управление</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item medical">Здравоохранение</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item education">Образование</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item social">Социальная защита</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item building">Строительство</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="section">
-                <div className="section_time">
-                  <span>
-                    13:00 — 14:00
-                  </span>
-                </div>
-
-                <div className="section_content">
-                  <div className="section_content_title bld">
+                  <div className="section_content_title">
                     Обед
                   </div>
                 </div>
@@ -318,66 +285,51 @@ class Index extends React.Component {
               <div className="section">
                 <div className="section_time">
                   <span>
-                    14:00 — 15:30
+                    16:00 – 17:00
                   </span>
                 </div>
 
                 <div className="section_content">
-                  <div className="section_content_title sub">
-                    Сессия 2: направление ударов
+                  <div className="section_content_title bld">
+                    Пленарное заседание Форума
                   </div>
 
-                  <div className="section_content_desc">
-                    Темы уточняются
+                  <div className="section_content_place">
+                    Технопарк «Анкудиновка»
                   </div>
 
-                  <div className="section_content_slider">
-                    <div className="swiper-container">
-                      <div className="swiper-wrapper">
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item industry">Промышленность</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item goverment">Государственное управление</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item medical">Здравоохранение</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item education">Образование</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item social">Социальная защита</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item building">Строительство</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="section_content_item with_bl">
+                    Модератор: определяется
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    Спикеры:
+                    <ul>
+                      <li>
+                        Андреев А.Г., генеральный директор ОАО ПНППК;
+                      </li>
+                      <li>
+                        Горьков С.Н., председатель Внешэкономбанка;
+                      </li>
+                      <li>
+                        Когогин C.А., генеральный директор ПАО «КамАз»;
+                      </li>
+                      <li>
+                        Когогин C.А., генеральный директор ПАО «КамАз»;
+                      </li>
+                      <li>
+                        Никитин Г.С., Врио Губернатора Нижегородской области;
+                      </li>
+                      <li>
+                        Орешкин М.С., Министр экономического развития Российской Федерации;
+                      </li>
+                      <li>
+                        Чупшева С.В., генеральный директор Агентства стратегических инициатив;
+                      </li>
+                      <li>
+                        Шмелева Е.В., руководитель Фонда «Талант и успех».
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -385,103 +337,91 @@ class Index extends React.Component {
               <div className="section">
                 <div className="section_time">
                   <span>
-                    15:30 — 16:00
+                    17:00 – 17:30
                   </span>
                 </div>
 
                 <div className="section_content">
-                  <div className="section_content_title bld">
+                  <div className="section_content_title">
                     Кофе-брейк
                   </div>
                 </div>
               </div>
 
-              <div className="section">
-                <div className="section_time">
-                  <span>
-                    16:00 — 17:00
-                  </span>
-                </div>
-
-                <div className="section_content">
-                  <div className="section_content_title sub">
-                    Сессия 3: план действий
+              {lections &&
+                <div className="section">
+                  <div className="section_time">
+                    <span>
+                      17:30 – 19:00
+                    </span>
                   </div>
 
-                  <div className="section_content_desc">
-                    Темы уточняются
-                  </div>
+                  <div className="section_content">
+                    <div className="section_content_title bld">
+                      Сессия 2: барьеры и направления действий
+                    </div>
 
-                  <div className="section_content_slider">
-                    <div className="swiper-container">
-                      <div className="swiper-wrapper">
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item industry">Промышленность</div>
+                    <div className="section_content_place">
+                      Технопарк «Анкудиновка»
+                    </div>
+
+                    <div className="section_content_slider">
+                      <div className="swiper-container">
+                        <div className="swiper-wrapper">
+                          <div className="section_content_item swiper-slide">
+                            <div className="meta">
+                              <div className="meta_item goverment">Государственное управление</div>
+                            </div>
+
+                            <div className="desc" dangerouslySetInnerHTML={{__html: lections[2].text_md}} />
                           </div>
-                          <span>
-                          </span>
+
+                          <div className="section_content_item swiper-slide">
+                            <div className="meta">
+                              <div className="meta_item industry">Промышленность</div>
+                            </div>
+                            <div className="desc" dangerouslySetInnerHTML={{__html: lections[4].text_md}} />
+                          </div>
+
+                          <div className="section_content_item swiper-slide">
+                            <div className="meta">
+                              <div className="meta_item building">Строительство</div>
+                            </div>
+                            <div className="desc" dangerouslySetInnerHTML={{__html: lections[6].text_md}} />
+                          </div>
+
+                          <div className="section_content_item swiper-slide">
+                            <div className="meta">
+                              <div className="meta_item medical">Здравоохранение</div>
+                            </div>
+                            <div className="desc" dangerouslySetInnerHTML={{__html: lections[8].text_md}} />
+                          </div>
+                          <div className="section_content_item swiper-slide">
+                            <div className="meta">
+                              <div className="meta_item education">Образование</div>
+                            </div>
+                            <div className="desc" dangerouslySetInnerHTML={{__html: lections[10].text_md}} />
+                            <div className="desc" dangerouslySetInnerHTML={{__html: lections[11].text_md}} />
+                          </div>
+                          <div className="section_content_item swiper-slide">
+                            <div className="meta">
+                              <div className="meta_item social">Социальная защита</div>
+                            </div>
+                            <div className="desc" dangerouslySetInnerHTML={{__html: lections[13].text_md}} />
+                          </div>
                         </div>
 
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item goverment">Государственное управление</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item medical">Здравоохранение</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item education">Образование</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item social">Социальная защита</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
-                        <div className="section_content_item swiper-slide">
-                          <div className="meta">
-                            <div className="meta_item building">Строительство</div>
-                          </div>
-                          <span>
-                          </span>
-                        </div>
+                        <div className="swiper-pagination"></div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              }
 
               <div className="section">
                 <div className="section_time">
                   <span>
-                    17:00 — 18:00
-                  </span>
-                </div>
-
-                <div className="section_content">
-                  <div className="section_content_title bld">
-                    Общая сессия: интервью с лидерами направлений
-                  </div>
-                </div>
-              </div>
-
-              <div className="section">
-                <div className="section_time">
-                  <span>
-                    18:00 — 19:00
+                    19:15 – 20:00
                   </span>
                 </div>
 
@@ -489,70 +429,9 @@ class Index extends React.Component {
                   <div className="section_content_title bld">
                     Подведение итогов дня
                   </div>
-                </div>
-              </div>
-              */}
 
-            </div>
-
-            <div className="days_item first">
-              <div className="date">
-                <span>17</span> мая, четверг
-              </div>
-
-              {/*
-              <div className="section">
-                <div className="section_time">
-                  <span>
-                    10:00 — 15:00
-                  </span>
-                </div>
-                <div className="section_content">
-                  <div className="section_content_title bld">
-                    Прибытие и размещение участников
-                  </div>
-                </div>
-              </div>
-              */}
-
-              <div className="section">
-                <div className="section_time">
-                  <span>
-                    11:00 — 14:00
-                  </span>
-                </div>
-
-                <div className="section_content">
-                  <div className="section_content_title bld">
-                    Осмотр образцовых предприятий Нижегородской области
-                  </div>
-
-                  <div className="section_content_item with_bl">
-                    <b>«Бережливое» правительство</b> (посещение проектного офиса правительства Нижегородской области)
-                  </div>
-
-                  <div className="section_content_item with_bl">
-                    <b>Образец предприятия с развитой производственной системой</b> (посещение АО «ОКБМ им Африкантова» ГК «Росатом»)
-                  </div>
-
-                  <div className="section_content_item with_bl">
-                    <b>Внедрение методов «бережливого» производства на предприятии-участнике приоритетной программы «Повышение производительности труда»</b> (ООО «Узола»)
-                  </div>
-
-                  <div className="section_content_item with_bl">
-                    <b>Оптимизации офисных процессов</b> (посещение ОАО «Гринатом»)
-                  </div>
-
-                  <div className="section_content_item with_bl">
-                    <b>Оптимизация работы поликлиники</b> (посещение Детской  городской поликлиники №39 и Городской поликлиники №7)
-                  </div>
-
-                  <div className="section_content_item with_bl">
-                    <b>Внедрение «бережливых» технологий в образовательном учреждении</b> (посещение Православной гимназии им. Александра Невского)
-                  </div>
-
-                  <div className="section_content_item with_bl">
-                    <b>Оптимизация процессов проектирования и сооружения объектов</b> (посещение АО ИК «Атомстройэкспорт»  ГК «Росатом»)
+                  <div className="section_content_place">
+                    Технопарк «Анкудиновка»
                   </div>
                 </div>
               </div>
@@ -560,7 +439,7 @@ class Index extends React.Component {
               <div className="section">
                 <div className="section_time">
                   <span>
-                    19:00 — 21:00
+                    20:30 – 22:30
                   </span>
                 </div>
 
@@ -568,8 +447,99 @@ class Index extends React.Component {
                   <div className="section_content_title bld">
                     Торжественный ужин
                   </div>
+
+                  <div className="section_content_place">
+                    Место уточняется
+                  </div>
+
                   <div className="section_content_item">
-                    Приветствие Губернатора и открытие Форума
+                    Приветствие Губернатора и подведение итогов Форума
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="days_item first">
+              <div className="date">
+                <span>17</span> мая, четверг
+              </div>
+
+              <div className="section">
+                <div className="section_time">
+                  <span>
+                    09:30 – 10:30
+                  </span>
+                </div>
+
+                <div className="section_content">
+                  <div className="section_content_title bld">
+                    Деловой завтрак
+                  </div>
+
+                  <div className="section_content_place">
+                    Отель Sheraton
+                  </div>
+
+                  <div className="section_content_item">
+                    Обсуждение итогов Форума (по направлениям: Государственное управление; Промышленность; Строительство; Здравоохранение; Образование; Социальная защита)
+                  </div>
+                </div>
+              </div>
+
+              <div className="section">
+                <div className="section_time">
+                  <span>
+                    11:00 — 16:00
+                  </span>
+                </div>
+
+                <div className="section_content">
+                  <div className="section_content_title bld">
+                    Осмотр и обсуждение образцов Нижегородской области
+                    <br />
+                    «Бережливая губерния»
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    <b>Бережливое Правительство</b> (проектный офис правительства Нижегородской области)
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    <b>Бережливое предприятие ГК «Росатом»</b> (АО «ОКБМ Африкантов»;)
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    <b>Бережливое предприятие приоритетной программы</b> (ЗАО «Узола»)
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    <b>Бережливый офис</b> (АО «Гринатом»)
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    <b>Бережливая школа</b> (Православная гимназия им. Александра Невского)
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    <b>Бережливые поликлиники</b> (Детская городская поликлиника №39, Городская поликлиника №7)
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    <b>Бережливое строительство</b> (Инжиниринговая компания Атомстройэкспорт)
+                  </div>
+                </div>
+              </div>
+
+              <div className="section">
+                <div className="section_time">
+                  <span>
+                    с 17:00
+                  </span>
+                </div>
+
+                <div className="section_content">
+                  <div className="section_content_title">
+                    Отъезд участников Форума
                   </div>
                 </div>
               </div>
