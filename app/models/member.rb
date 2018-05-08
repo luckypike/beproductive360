@@ -50,8 +50,6 @@ class Member < ApplicationRecord
       msg = "№#{id}(#{title}) отклонен"
     end
 
-    p msg
-
-    # Sms.message(user.phone, msg) if Rails.env.production?
+    Sms.message(user.phone, msg) if Rails.env.production?
   end
 end
