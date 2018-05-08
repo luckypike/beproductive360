@@ -45,11 +45,11 @@ class Member < ApplicationRecord
 
   def send_text
     if accepted?
-      msg = "№#{id}(#{title}) одобрен"
+      msg = "#{title}! Подтверждаем Вашу регистрацию на Форум «Производительность 360». Обращаем внимание что основной день программы — 16 мая. Подробности на портале beproductive360.ru"
     elsif rejected?
-      msg = "№#{id}(#{title}) отклонен"
+      msg = "#{title}! Благодарим Вас за интерес к Форуму «Производительность 360». К сожалению, Ваша заявка на Форум не прошла модерацию. С удовольствием встретимся с Вами на следующем Форуме!"
     end
-
+    
     Sms.message(user.phone, msg) if Rails.env.production?
   end
 end
