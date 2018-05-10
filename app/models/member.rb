@@ -29,13 +29,13 @@ class Member < ApplicationRecord
 
   has_one_attached :image
 
-  validates_presence_of :first_name, :last_name, :company, :session, :email, :state, :image
+  validates_presence_of :first_name, :last_name, :company, :session, :email, :state
 
-  validate do
-    unless image.attached?
-       errors[:image] << 'не должно отсутствовать'
-    end
-  end
+  # validate do
+  #   unless image.attached?
+  #      errors[:image] << 'не должно отсутствовать'
+  #   end
+  # end
 
   SESSIONS = %w(industry goverment medical education social building)
   HOTELS = %w(sheraton kulibin courtyard hampton ibis)
