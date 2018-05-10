@@ -33,7 +33,7 @@ class Member < ApplicationRecord
 
   validate do
     unless image.attached?
-       errors[:image] << 'Загрузите фото'
+       errors[:image] << 'не должно отсутствовать'
     end
   end
 
