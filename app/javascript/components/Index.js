@@ -148,6 +148,15 @@ class Index extends React.Component {
                   <div className="section_content_place">
                     Отели Нижнего Новгорода
                   </div>
+
+                  <div className="section_content_item">
+                    <p>
+                      В зоне ресепшн аккредитованных отелей присутствуют волонтеры в футболках с логотипом форума, которые координируют делегатов по времени и месту отправления шаттлов до площадки Форума.
+                    </p>
+                    <p>
+                      Время отправления шаттлов: с 10:30 до  10:50 от аккредитованных отелей до технопарка «Анкудиновка»
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -285,7 +294,7 @@ class Index extends React.Component {
               <div className="section">
                 <div className="section_time">
                   <span>
-                    16:00 – 17:00
+                    16:00 – 17:30
                   </span>
                 </div>
 
@@ -337,7 +346,7 @@ class Index extends React.Component {
               <div className="section">
                 <div className="section_time">
                   <span>
-                    17:00 – 17:30
+                    17:30 – 18:00
                   </span>
                 </div>
 
@@ -352,7 +361,7 @@ class Index extends React.Component {
                 <div className="section">
                   <div className="section_time">
                     <span>
-                      17:30 – 19:00
+                      18:00 – 19:00
                     </span>
                   </div>
 
@@ -449,7 +458,7 @@ class Index extends React.Component {
                   </div>
 
                   <div className="section_content_place">
-                    Место уточняется
+                    Концертный зал Премио
                   </div>
 
                   <div className="section_content_item">
@@ -481,7 +490,17 @@ class Index extends React.Component {
                   </div>
 
                   <div className="section_content_item">
-                    Обсуждение итогов Форума (по направлениям: Государственное управление; Промышленность; Строительство; Здравоохранение; Образование; Социальная защита)
+                    <p>
+                      Обсуждение итогов Форума (по направлениям: Государственное управление; Промышленность; Строительство; Здравоохранение; Образование; Социальная защита)
+                    </p>
+
+                    <p>
+                      В зоне ресепшн аккредитованных отелей присутствуют волонтеры в футболках с логотипом форума, которые координируют делегатов по времени и месту отправления шаттлов до площадки Форума.
+                    </p>
+
+                    <p>
+                      Время отправления шаттлов: с 09:00 до 09:20 от отелей Кулибин, Courtyard by Mariott, Hampton by Hilton, Ibis до отеля Sheraton
+                    </p>
                   </div>
                 </div>
               </div>
@@ -489,7 +508,7 @@ class Index extends React.Component {
               <div className="section">
                 <div className="section_time">
                   <span>
-                    11:00 — 16:00
+                    11:00 — 14:30
                   </span>
                 </div>
 
@@ -498,6 +517,10 @@ class Index extends React.Component {
                     Осмотр и обсуждение образцов Нижегородской области
                     <br />
                     «Бережливая губерния»
+                  </div>
+
+                  <div className="section_content_item">
+                    Время отправления шаттлов: с 10:30 до 10:50 от отеля Sheraton 5* до организаций–образцов Нижегородской области «Бережливая губерния»
                   </div>
 
                   <div className="section_content_item with_bl">
@@ -526,6 +549,24 @@ class Index extends React.Component {
 
                   <div className="section_content_item with_bl">
                     <b>Бережливое строительство</b> (Инжиниринговая компания Атомстройэкспорт)
+                  </div>
+                </div>
+              </div>
+
+              <div className="section">
+                <div className="section_time">
+                  <span>
+                    15:00 – 17:00
+                  </span>
+                </div>
+
+                <div className="section_content">
+                  <div className="section_content_title bld">
+                    Совещание по результатам исполнения стратегических инициатив Губернатора Нижегородской области, проект «Бережливая губерния»
+                  </div>
+
+                  <div className="section_content_item">
+                    (участие по приглашениям)
                   </div>
                 </div>
               </div>
