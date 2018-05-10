@@ -203,7 +203,7 @@ class Index extends React.Component {
                   </div>
 
                   <div className="section_content_item with_bl">
-                    Орешкин М.С., Министр экономического развития Российской Федерации
+                    Орешкин М.С., и. о. Министра экономического развития Российской Федерации
                   </div>
                 </div>
               </div>
@@ -218,7 +218,7 @@ class Index extends React.Component {
 
                   <div className="section_content">
                     <div className="section_content_title bld">
-                      Сессия 1: истории успеха и цели
+                      Сессия 1: Истории успеха и цели
                     </div>
 
                     <div className="section_content_place">
@@ -330,7 +330,7 @@ class Index extends React.Component {
                         Никитин Г.С., Врио Губернатора Нижегородской области;
                       </li>
                       <li>
-                        Орешкин М.С., Министр экономического развития Российской Федерации;
+                        Орешкин М.С., и. о. Министра экономического развития Российской Федерации;
                       </li>
                       <li>
                         Чупшева С.В., генеральный директор Агентства стратегических инициатив;
@@ -367,7 +367,7 @@ class Index extends React.Component {
 
                   <div className="section_content">
                     <div className="section_content_title bld">
-                      Сессия 2: барьеры и направления действий
+                      Сессия 2: Барьеры и направления действий
                     </div>
 
                     <div className="section_content_place">
