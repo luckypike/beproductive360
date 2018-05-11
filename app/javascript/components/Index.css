@@ -355,11 +355,12 @@
                     }
 
                     &_member {
-                      align-content: left;
+                      /* align-content: left; */
                       display: flex;
-                      justify-content: center;
-                      flex-wrap: wrap;
-                      flex-direction: column;
+                      align-items: center;
+                      /* justify-content: center; */
+                      /* flex-wrap: wrap; */
+                      /* flex-direction: column; */
                       padding: 0 0 calc(var(--yr) * 3);
                       margin: calc(var(--yr) * 4) 0 0;
                       border-bottom: 1px solid color(white b(+5%));

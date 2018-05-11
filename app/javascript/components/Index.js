@@ -54,8 +54,11 @@ function PartyMember(props) {
   return (
     <div className="party_member">
       <div className="member_avatar" dangerouslySetInnerHTML={{__html: props.member.avatar}} />
-      <div className="member_name">{props.member.last_name}</div>
-      <div className="member_name">{props.member.first_name}</div>
+      <div className="member_name">
+        {props.member.last_name}
+        <br />
+        {props.member.first_name}
+      </div>
     </div>
   );
 }

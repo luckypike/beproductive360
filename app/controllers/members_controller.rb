@@ -20,7 +20,7 @@ class MembersController < ApplicationController
   end
 
   def list
-    @members = Member.order(:last_name)
+    @members = Member.with_attached_image.order(:last_name)
   end
 
   def show
