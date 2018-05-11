@@ -2,7 +2,7 @@ wb = xlsx_package.workbook
 
 wb.styles do |s|
   bold =  s.add_style  :b => true
-  labels = ['Ф.И.О', 'Номер заявки', 'Телефон', 'Эл. почта', 'Организация', 'Должность', 'Прибытие', 'Отъезд', 'Чекаут', 'Учреждение', 'Направление', 'Отель']
+  labels = ['Ф.И.О', 'Номер заявки', 'Время', 'Телефон', 'Эл. почта', 'Организация', 'Должность', 'Прибытие', 'Отъезд', 'Чекаут', 'Учреждение', 'Направление', 'Отель']
   Member.states.keys.each do |key|
     wb.add_worksheet(name: t("enums.member.state.#{key.to_s}")) do |sheet|
       sheet.add_row labels, :b => true
@@ -11,6 +11,7 @@ wb.styles do |s|
         row = []
         row.push(member.title_full)
         row.push(member.id)
+        row.push(l(member.created_at, format: :short))
         row.push(member.user.phone)
         row.push(member.email)
         row.push(member.company)
