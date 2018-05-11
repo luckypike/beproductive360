@@ -329,16 +329,29 @@
                   }
 
                   .party {
-                    &_list {
-                      font-size: calc(var(--yr) * 3);
-                      line-height: calc(var(--yr) * 4);
+                    font-size: calc(var(--yr) * 3);
+                    line-height: calc(var(--yr) * 4);
+
+                    @media (--s) {
+                      font-size: calc(var(--yr) * 4);
+                      line-height: calc(var(--yr) * 5.5);
+                    }
+
+                    &_list,
+                    &_list_anounce {
                       display: none;
                       flex-wrap: wrap;
+                    }
 
-                      @media (--s) {
-                        font-size: calc(var(--yr) * 4);
-                        line-height: calc(var(--yr) * 5.5);
-                      }
+                    &_list_anounce {
+                      display: flex;
+                    }
+
+                    &_show {
+                      display: inline-block;
+                      cursor: pointer;
+                      margin: calc(var(--yr) * 2) 0 0;
+                      text-decoration: underline;
                     }
 
                     &_member {
@@ -350,12 +363,15 @@
                       padding: 0 0 calc(var(--yr) * 3);
                       margin: calc(var(--yr) * 4) 0 0;
                       border-bottom: 1px solid color(white b(+5%));
-                      width: 100%;
-                      height: 72px;
+                      width: 175px;
+                      height: 52px;
 
                       @media (--s) {
-                        width: 33.3%;
+                        font-size: calc(var(--yr) * 3.5);
+                        line-height: calc(var(--yr) * 4.5);
                       }
+
+
 
                       .member_avatar {
                         background: #f1f1f1;
@@ -363,8 +379,8 @@
                         overflow: hidden;
                         margin-right: var(--xr);
                         position: relative;
-                        width: 60px;
-                        height: 60px;
+                        width: 40px;
+                        height: 40px;
 
                         img {
                           display: block;

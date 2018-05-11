@@ -37,21 +37,20 @@ function MembersLink(props) {
 function Party(props) {
   return (
     <div className="party">
-      <div className="party_show">Показать всех</div>
+      <p>Участники:</p>
+      <div>Количество зарегистрированных участников: {props.members.length}</div>
       <div className="party_list">
 
         { props.members.map((m, index) =>
           <PartyMember key={index} member={m}/>
         )}
       </div>
-
-      <div>{props.members.length} человек </div>
+      <div className="party_show">Показать всех участников</div>
     </div>
   );
 }
 
 function PartyMember(props) {
-  // console.log(props.member);
   return (
     <div className="party_member">
       <div className="member_avatar" dangerouslySetInnerHTML={{__html: props.member.avatar}} />
@@ -100,7 +99,10 @@ class Index extends React.Component {
             },
             on: {
               slideChange: function (){
-                // console.log(this.activeIndex);
+                Array.from(document.getElementsByClassName("party_show_active")).forEach(function(item) {
+                  console.log(item);
+                  item.click();
+                });
               }
             }
           });
@@ -354,25 +356,28 @@ class Index extends React.Component {
                               <div className="meta_item building">Строительство</div>
                             </div>
                             <div className="desc" dangerouslySetInnerHTML={{__html: lections[5].text_md}} />
+                            <Party members={building}/>
                           </div>
-
                           <div className="section_content_item swiper-slide">
                             <div className="meta">
                               <div className="meta_item medical">Здравоохранение</div>
                             </div>
                             <div className="desc" dangerouslySetInnerHTML={{__html: lections[7].text_md}} />
+                            <Party members={medical}/>
                           </div>
                           <div className="section_content_item swiper-slide">
                             <div className="meta">
                               <div className="meta_item education">Образование</div>
                             </div>
                             <div className="desc" dangerouslySetInnerHTML={{__html: lections[9].text_md}} />
+                            <Party members={education}/>
                           </div>
                           <div className="section_content_item swiper-slide">
                             <div className="meta">
                               <div className="meta_item social">Социальная защита</div>
                             </div>
                             <div className="desc" dangerouslySetInnerHTML={{__html: lections[12].text_md}} />
+                            <Party members={social}/>
                           </div>
                         </div>
 
@@ -513,6 +518,7 @@ class Index extends React.Component {
                             </div>
 
                             <div className="desc" dangerouslySetInnerHTML={{__html: lections[2].text_md}} />
+                            <Party members={goverment}/>
                           </div>
 
                           <div className="section_content_item swiper-slide">
@@ -520,6 +526,7 @@ class Index extends React.Component {
                               <div className="meta_item industry">Промышленность</div>
                             </div>
                             <div className="desc" dangerouslySetInnerHTML={{__html: lections[4].text_md}} />
+                            <Party members={industry}/>
                           </div>
 
                           <div className="section_content_item swiper-slide">
@@ -527,6 +534,7 @@ class Index extends React.Component {
                               <div className="meta_item building">Строительство</div>
                             </div>
                             <div className="desc" dangerouslySetInnerHTML={{__html: lections[6].text_md}} />
+                            <Party members={building}/>
                           </div>
 
                           <div className="section_content_item swiper-slide">
@@ -534,6 +542,7 @@ class Index extends React.Component {
                               <div className="meta_item medical">Здравоохранение</div>
                             </div>
                             <div className="desc" dangerouslySetInnerHTML={{__html: lections[8].text_md}} />
+                            <Party members={medical}/>
                           </div>
                           <div className="section_content_item swiper-slide">
                             <div className="meta">
@@ -541,12 +550,14 @@ class Index extends React.Component {
                             </div>
                             <div className="desc" dangerouslySetInnerHTML={{__html: lections[10].text_md}} />
                             <div className="desc" dangerouslySetInnerHTML={{__html: lections[11].text_md}} />
+                            <Party members={education}/>
                           </div>
                           <div className="section_content_item swiper-slide">
                             <div className="meta">
                               <div className="meta_item social">Социальная защита</div>
                             </div>
                             <div className="desc" dangerouslySetInnerHTML={{__html: lections[13].text_md}} />
+                            <Party members={social}/>
                           </div>
                         </div>
 
