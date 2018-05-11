@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 
 import axios from 'axios';
 
-import video from '../images/bg.mp4';
-
-import Logo from '!svg-react-loader!../images/logo_hor.svg';
+import Logo from '../images/logo.svg';
 
 import MinecLogo from '../images/partners/minec.svg';
 import RALogo from '../images/partners/rosatom.svg';
 import NizLogo from '../images/partners/niz.svg';
+import TassLogo from '../images/partners/tass.svg';
 
 
 import {
@@ -99,6 +98,11 @@ class Index extends React.Component {
               el: '.swiper-pagination',
               clickable: true,
             },
+            on: {
+              slideChange: function (){
+                // console.log(this.activeIndex);
+              }
+            }
           });
 
           this.swipers = swipers;
@@ -114,6 +118,17 @@ class Index extends React.Component {
           members: res.data
         });
       });
+  }
+
+  changeActiveSlide = (s, i, e) => {
+    if(e.target.classList.contains('meta_nav_item')){
+      this.swipers[s].slideTo(i);
+      let ii = e.target.closest('.meta_nav').children;
+      for (var i=0, child; child=ii[i]; i++) {
+        child.classList.remove('active');
+      }
+      e.target.classList.add('active');
+    }
   }
 
   render () {
@@ -137,31 +152,51 @@ class Index extends React.Component {
         <div className="page_index_header_wrapper">
           <div className="page_index_header">
             <div className="logo">
-              <Logo />
+              <img src={Logo} />
             </div>
 
-            <div className="slogan">
-              Решения для тех, кто хочет добиться успеха
+            <div className="qwe">
+              <div className="place">
+                <span className="date">
+                  16 - 17 мая
+                </span>
+                <br />
+                Нижний Новгород
+              </div>
+
+              <div className="join">
+                {this.props.auth ? (
+                  <MembersLink {...this.props} />
+                ) : (
+                  <JoinLink {...this.props} />
+                )}
+              </div>
             </div>
 
-            <div className="place">
-              16-17 мая 2018
-              <br />
-              Нижний Новгород, Технопарк Анкудиновка
-            </div>
-
-            <div className="join">
-              {this.props.auth ? (
-                <MembersLink {...this.props} />
-              ) : (
-                <JoinLink {...this.props} />
-              )}
+            <div className="partners">
+              <div className="partners_g">
+                <div className="label">Организаторы</div>
+                <div className="partners_g_item">
+                  <img src={RALogo} />
+                </div>
+                <div className="partners_g_item">
+                  <img src={MinecLogo} />
+                </div>
+              </div>
+              <div className="partners_g">
+                <div className="label">При поддержке</div>
+                <div className="partners_g_item">
+                  <img src={NizLogo} />
+                </div>
+              </div>
+              <div className="partners_g">
+                <div className="label">Информационный партнер</div>
+                <div className="partners_g_item">
+                  <img src={TassLogo} />
+                </div>
+              </div>
             </div>
           </div>
-
-          <video className="bgvid" playsInline autoPlay muted loop>
-            <source src={video} type="video/mp4" />
-          </video>
         </div>
 
         <div className="page_index_intro">
@@ -246,15 +281,11 @@ class Index extends React.Component {
                   </div>
 
                   <div className="section_content_item with_bl">
-                    Горьков С.Н., Председатель правления Внешэкономбанк
-                  </div>
-
-                  <div className="section_content_item with_bl">
                     Никитин Г.С., Врио Губернатора Нижегородской области
                   </div>
 
                   <div className="section_content_item with_bl">
-                    Орешкин М.С., Министр экономического развития Российской Федерации
+                    Орешкин М.С., и. о. Министра экономического развития Российской Федерации
                   </div>
                 </div>
               </div>
@@ -269,11 +300,34 @@ class Index extends React.Component {
 
                   <div className="section_content">
                     <div className="section_content_title bld">
-                      Сессия 1: истории успеха и цели
+                      Сессия 1: Истории успеха и цели
                     </div>
 
                     <div className="section_content_place">
                       Технопарк «Анкудиновка»
+                    </div>
+
+                    <div className="section_content_item slider_nav">
+                      <div className="meta_nav">
+                        <div className="meta_nav_item goverment active" onClick={(e) => this.changeActiveSlide(0, 0, e)}>
+                          Государственное управление
+                        </div>
+                        <div className="meta_nav_item industry" onClick={(e) => this.changeActiveSlide(0, 1, e)}>
+                          Промышленность
+                        </div>
+                        <div className="meta_nav_item building" onClick={(e) => this.changeActiveSlide(0, 2, e)}>
+                          Строительство
+                        </div>
+                        <div className="meta_nav_item medical" onClick={(e) => this.changeActiveSlide(0, 3, e)}>
+                          Здравоохранение
+                        </div>
+                        <div className="meta_nav_item education" onClick={(e) => this.changeActiveSlide(0, 4, e)}>
+                          Образование
+                        </div>
+                        <div className="meta_nav_item social" onClick={(e) => this.changeActiveSlide(0, 5, e)}>
+                          Социальная защита
+                        </div>
+                      </div>
                     </div>
 
                     <div className="section_content_slider">
@@ -383,7 +437,7 @@ class Index extends React.Component {
                         Никитин Г.С., Врио Губернатора Нижегородской области;
                       </li>
                       <li>
-                        Орешкин М.С., Министр экономического развития Российской Федерации;
+                        Орешкин М.С., и. о. Министра экономического развития Российской Федерации;
                       </li>
                       <li>
                         Чупшева С.В., генеральный директор Агентства стратегических инициатив;
@@ -420,11 +474,34 @@ class Index extends React.Component {
 
                   <div className="section_content">
                     <div className="section_content_title bld">
-                      Сессия 2: барьеры и направления действий
+                      Сессия 2: Барьеры и направления действий
                     </div>
 
                     <div className="section_content_place">
                       Технопарк «Анкудиновка»
+                    </div>
+
+                    <div className="section_content_item slider_nav">
+                      <div className="meta_nav">
+                        <div className="meta_nav_item goverment active" onClick={(e) => this.changeActiveSlide(1, 0, e)}>
+                          Государственное управление
+                        </div>
+                        <div className="meta_nav_item industry" onClick={(e) => this.changeActiveSlide(1, 1, e)}>
+                          Промышленность
+                        </div>
+                        <div className="meta_nav_item building" onClick={(e) => this.changeActiveSlide(1, 2, e)}>
+                          Строительство
+                        </div>
+                        <div className="meta_nav_item medical" onClick={(e) => this.changeActiveSlide(1, 3, e)}>
+                          Здравоохранение
+                        </div>
+                        <div className="meta_nav_item education" onClick={(e) => this.changeActiveSlide(1, 4, e)}>
+                          Образование
+                        </div>
+                        <div className="meta_nav_item social" onClick={(e) => this.changeActiveSlide(1, 5, e)}>
+                          Социальная защита
+                        </div>
+                      </div>
                     </div>
 
                     <div className="section_content_slider">
@@ -568,32 +645,30 @@ class Index extends React.Component {
                 <div className="section_content">
                   <div className="section_content_title bld">
                     Осмотр и обсуждение образцов Нижегородской области
-                    <br />
-                    «Бережливая губерния»
                   </div>
 
                   <div className="section_content_item">
-                    Время отправления шаттлов: с 10:30 до 10:50 от отеля Sheraton 5* до организаций–образцов Нижегородской области «Бережливая губерния»
+                    Время отправления шаттлов: с 10:30 до 10:50 от отеля Sheraton 5* до организаций–образцов Нижегородской области
                   </div>
 
                   <div className="section_content_item with_bl">
-                    <b>Бережливое Правительство</b> (проектный офис правительства Нижегородской области)
+                    <b>Правительство</b> (проектный офис правительства Нижегородской области)
                   </div>
 
                   <div className="section_content_item with_bl">
-                    <b>Бережливое предприятие ГК «Росатом»</b> (АО «ОКБМ Африкантов»;)
+                    <b>Предприятие ГК «Росатом»</b> (АО «ОКБМ Африкантов»;)
                   </div>
 
                   <div className="section_content_item with_bl">
-                    <b>Бережливое предприятие приоритетной программы</b> (ЗАО «Узола»)
+                    <b>Предприятие приоритетной программы</b> (ЗАО «Узола»)
                   </div>
 
                   <div className="section_content_item with_bl">
-                    <b>Бережливый офис</b> (АО «Гринатом»)
+                    <b>Оптимизированный офис</b> (АО «Гринатом»)
                   </div>
 
                   <div className="section_content_item with_bl">
-                    <b>Бережливая школа</b> (Православная гимназия им. Александра Невского)
+                    <b>Школа</b> (Православная гимназия им. Александра Невского)
                   </div>
 
                   <div className="section_content_item with_bl">
@@ -601,7 +676,7 @@ class Index extends React.Component {
                   </div>
 
                   <div className="section_content_item with_bl">
-                    <b>Бережливое строительство</b> (Инжиниринговая компания Атомстройэкспорт)
+                    <b>Строительство</b> (Инжиниринговая компания Атомстройэкспорт)
                   </div>
                 </div>
               </div>
@@ -615,7 +690,7 @@ class Index extends React.Component {
 
                 <div className="section_content">
                   <div className="section_content_title bld">
-                    Совещание по результатам исполнения стратегических инициатив Губернатора Нижегородской области, проект «Бережливая губерния»
+                    Совещание по результатам исполнения стратегических инициатив Губернатора Нижегородской области
                   </div>
 
                   <div className="section_content_item">
@@ -780,13 +855,13 @@ class Index extends React.Component {
                   <div className="i">
                     3
                   </div>
-                  13 км
+                  37 км
                 </div>
 
                 <div className="desc">
-                  <strong>ООО «Узола»</strong>
+                  <strong>ЗАО «Узола»</strong>
                   <br />
-                  Ларина, 7а
+                  г. Балахна, ул. Строителей д. 2
                 </div>
               </div>
 

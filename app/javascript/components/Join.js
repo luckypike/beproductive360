@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import Cleave from 'cleave.js/react';
 
-import Logo from '../images/logo_vert.svg';
+import Logo from '../images/logo.svg';
 
 import {
   Link

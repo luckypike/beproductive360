@@ -196,26 +196,23 @@ a {
     margin-bottom: calc(var(--yr) * 8);
 
     .logo {
-      padding-right: 60px;
-      max-width: 23rem;
+      /* padding-right: 60px; */
+      width: 160px;
+      /* margin: 0 auto; */
 
       a {
         border: 0;
       }
 
-      svg {
+      img {
         display: block;
-
-        .main {
-          fill: var(--pr_color);
-        }
       }
     }
 
     @media (--s) {
       .logo {
-        padding: calc(var(--yr) * 8) 0;
-        height: calc(var(--yr) * 32);
+        /* padding: calc(var(--yr) * 8) 0; */
+        /* height: calc(var(--yr) * 32); */
       }
     }
   }
