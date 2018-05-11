@@ -70,11 +70,27 @@ class Index extends React.Component {
               el: '.swiper-pagination',
               clickable: true,
             },
+            on: {
+              slideChange: function (){
+                // console.log(this.activeIndex);
+              }
+            }
           });
 
           this.swipers = swipers;
         });
       });
+  }
+
+  changeActiveSlide = (s, i, e) => {
+    if(e.target.classList.contains('meta_nav_item')){
+      this.swipers[s].slideTo(i);
+      let ii = e.target.closest('.meta_nav').children;
+      for (var i=0, child; child=ii[i]; i++) {
+        child.classList.remove('active');
+      }
+      e.target.classList.add('active');
+    }
   }
 
   render () {
@@ -244,6 +260,29 @@ class Index extends React.Component {
                       Технопарк «Анкудиновка»
                     </div>
 
+                    <div className="section_content_item slider_nav">
+                      <div className="meta_nav">
+                        <div className="meta_nav_item goverment active" onClick={(e) => this.changeActiveSlide(0, 0, e)}>
+                          Государственное управление
+                        </div>
+                        <div className="meta_nav_item industry" onClick={(e) => this.changeActiveSlide(0, 1, e)}>
+                          Промышленность
+                        </div>
+                        <div className="meta_nav_item building" onClick={(e) => this.changeActiveSlide(0, 2, e)}>
+                          Строительство
+                        </div>
+                        <div className="meta_nav_item medical" onClick={(e) => this.changeActiveSlide(0, 3, e)}>
+                          Здравоохранение
+                        </div>
+                        <div className="meta_nav_item education" onClick={(e) => this.changeActiveSlide(0, 4, e)}>
+                          Образование
+                        </div>
+                        <div className="meta_nav_item social" onClick={(e) => this.changeActiveSlide(0, 5, e)}>
+                          Социальная защита
+                        </div>
+                      </div>
+                    </div>
+
                     <div className="section_content_slider">
                       <div className="swiper-container">
                         <div className="swiper-wrapper">
@@ -391,6 +430,29 @@ class Index extends React.Component {
 
                     <div className="section_content_place">
                       Технопарк «Анкудиновка»
+                    </div>
+
+                    <div className="section_content_item slider_nav">
+                      <div className="meta_nav">
+                        <div className="meta_nav_item goverment active" onClick={(e) => this.changeActiveSlide(1, 0, e)}>
+                          Государственное управление
+                        </div>
+                        <div className="meta_nav_item industry" onClick={(e) => this.changeActiveSlide(1, 1, e)}>
+                          Промышленность
+                        </div>
+                        <div className="meta_nav_item building" onClick={(e) => this.changeActiveSlide(1, 2, e)}>
+                          Строительство
+                        </div>
+                        <div className="meta_nav_item medical" onClick={(e) => this.changeActiveSlide(1, 3, e)}>
+                          Здравоохранение
+                        </div>
+                        <div className="meta_nav_item education" onClick={(e) => this.changeActiveSlide(1, 4, e)}>
+                          Образование
+                        </div>
+                        <div className="meta_nav_item social" onClick={(e) => this.changeActiveSlide(1, 5, e)}>
+                          Социальная защита
+                        </div>
+                      </div>
                     </div>
 
                     <div className="section_content_slider">

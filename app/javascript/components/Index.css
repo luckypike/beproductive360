@@ -293,8 +293,6 @@
             }
 
             &_slider {
-
-
               .swiper {
                 &-container {
                   padding-bottom: calc(var(--yr) * 12);
@@ -377,6 +375,89 @@
 
             &_item {
               margin: calc(var(--yr) * 4) 0 0;
+
+              &.slider_nav {
+                display: none;
+                font-size: calc(var(--yr) * 2.75);
+                line-height: calc(var(--yr) * 6);
+                text-transform: uppercase;
+
+                .meta_nav {
+                  display: flex;
+                  flex-wrap: wrap;
+
+                  &_item {
+                    padding: 0 calc(var(--yr) * 2);
+                    border: 1px solid color(black alpha(-70%));
+                    border-radius: calc(var(--yr) * 3);
+                    margin-right: calc(var(--yr) * 2);
+                    cursor: pointer;
+                    user-select: none;
+
+                    &.industry {
+                      color: #E67207;
+                      border-color: color(#E67207 alpha(-70%));
+
+                      &.active {
+                        background: #E67207;
+                        color: white;
+                      }
+                    }
+
+                    &.medical {
+                      color: #0a7a17;
+                      border-color: color(#0a7a17 alpha(-70%));
+
+                      &.active {
+                        background: #0a7a17;
+                        color: white;
+                      }
+                    }
+
+                    &.goverment {
+                      color: #A166AB;
+                      border-color: color(#A166AB alpha(-70%));
+
+                      &.active {
+                        background: #A166AB;
+                        color: white;
+                      }
+                    }
+
+                    &.building {
+                      color: #1098AD;
+                      border-color: color(#1098AD alpha(-70%));
+
+                      &.active {
+                        background: #1098AD;
+                        color: white;
+                      }
+                    }
+
+                    &.education {
+                      color: #be0101;
+                      border-color: color(#cf970f alpha(-70%));
+
+                      &.active {
+                        background: #be0101;
+                        color: white;
+                      }
+                    }
+
+                    &.social {
+                      color: #dca92f;
+                      border-color: color(#cf970f alpha(-70%));
+
+                      &.active {
+                        background: #dca92f;
+                        color: white;
+                      }
+                    }
+
+                  }
+
+                }
+              }
 
               .fdt {
                 color: var(--sc_color);
@@ -464,7 +545,27 @@
     @media (--s) {
       .days {
         &_item {
+          .section {
+            &_content {
+              &_slider {
+                .swiper-pagination {
+                  display: none;
+                }
+              }
 
+              &_item {
+                &.slider_nav {
+                  display: block;
+                }
+
+                &.swiper-slide {
+                  .meta {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
