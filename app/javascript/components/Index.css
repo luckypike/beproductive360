@@ -126,7 +126,7 @@
       .logo {
         position: absolute;
         left: 50%;
-        top: 50%;
+        top: 45%;
         width: calc(6 / 16 * 100%);
         transform: translate(-50%, -50%);
         padding: 0 calc(var(--xr) * 2);
