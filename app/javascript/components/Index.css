@@ -393,6 +393,7 @@
                     margin-right: calc(var(--yr) * 2);
                     cursor: pointer;
                     user-select: none;
+                    margin-bottom: var(--yr);
 
                     &.industry {
                       color: #E67207;

@@ -230,10 +230,6 @@ class Index extends React.Component {
                   </div>
 
                   <div className="section_content_item with_bl">
-                    Горьков С.Н., Председатель правления Внешэкономбанк
-                  </div>
-
-                  <div className="section_content_item with_bl">
                     Никитин Г.С., Врио Губернатора Нижегородской области
                   </div>
 
@@ -596,32 +592,30 @@ class Index extends React.Component {
                 <div className="section_content">
                   <div className="section_content_title bld">
                     Осмотр и обсуждение образцов Нижегородской области
-                    <br />
-                    «Бережливая губерния»
                   </div>
 
                   <div className="section_content_item">
-                    Время отправления шаттлов: с 10:30 до 10:50 от отеля Sheraton 5* до организаций–образцов Нижегородской области «Бережливая губерния»
+                    Время отправления шаттлов: с 10:30 до 10:50 от отеля Sheraton 5* до организаций–образцов Нижегородской области
                   </div>
 
                   <div className="section_content_item with_bl">
-                    <b>Бережливое Правительство</b> (проектный офис правительства Нижегородской области)
+                    <b>Правительство</b> (проектный офис правительства Нижегородской области)
                   </div>
 
                   <div className="section_content_item with_bl">
-                    <b>Бережливое предприятие ГК «Росатом»</b> (АО «ОКБМ Африкантов»;)
+                    <b>Предприятие ГК «Росатом»</b> (АО «ОКБМ Африкантов»;)
                   </div>
 
                   <div className="section_content_item with_bl">
-                    <b>Бережливое предприятие приоритетной программы</b> (ЗАО «Узола»)
+                    <b>Предприятие приоритетной программы</b> (ЗАО «Узола»)
                   </div>
 
                   <div className="section_content_item with_bl">
-                    <b>Бережливый офис</b> (АО «Гринатом»)
+                    <b>Оптимизированный офис</b> (АО «Гринатом»)
                   </div>
 
                   <div className="section_content_item with_bl">
-                    <b>Бережливая школа</b> (Православная гимназия им. Александра Невского)
+                    <b>Школа</b> (Православная гимназия им. Александра Невского)
                   </div>
 
                   <div className="section_content_item with_bl">
@@ -629,7 +623,7 @@ class Index extends React.Component {
                   </div>
 
                   <div className="section_content_item with_bl">
-                    <b>Бережливое строительство</b> (Инжиниринговая компания Атомстройэкспорт)
+                    <b>Строительство</b> (Инжиниринговая компания Атомстройэкспорт)
                   </div>
                 </div>
               </div>
@@ -643,7 +637,7 @@ class Index extends React.Component {
 
                 <div className="section_content">
                   <div className="section_content_title bld">
-                    Совещание по результатам исполнения стратегических инициатив Губернатора Нижегородской области, проект «Бережливая губерния»
+                    Совещание по результатам исполнения стратегических инициатив Губернатора Нижегородской области
                   </div>
 
                   <div className="section_content_item">
