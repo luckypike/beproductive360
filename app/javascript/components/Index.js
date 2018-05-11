@@ -802,13 +802,13 @@ class Index extends React.Component {
                   <div className="i">
                     3
                   </div>
-                  13 км
+                  37 км
                 </div>
 
                 <div className="desc">
-                  <strong>ООО «Узола»</strong>
+                  <strong>ЗАО «Узола»</strong>
                   <br />
-                  Ларина, 7а
+                  г. Балахна, ул. Строителей д. 2
                 </div>
               </div>
 
