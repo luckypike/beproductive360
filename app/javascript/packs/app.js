@@ -20,3 +20,5 @@ flatpickr.localize(Russian);
 flatpickr('#member_date_arrival, #member_date_departure', {
   // dateFormat: 'd/m/Y',
 });
+
+import './legacy/common'

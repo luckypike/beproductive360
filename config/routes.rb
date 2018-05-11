@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :members do
     collection do
       get :all
+      get :list
     end
 
     post :accept, to: 'members#accept'

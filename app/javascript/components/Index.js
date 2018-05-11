@@ -35,6 +35,33 @@ function MembersLink(props) {
   );
 }
 
+function Party(props) {
+  return (
+    <div className="party">
+      <div className="party_show">Показать всех</div>
+      <div className="party_list">
+
+        { props.members.map((m, index) =>
+          <PartyMember key={index} member={m}/>
+        )}
+      </div>
+
+      <div>{props.members.length} человек </div>
+    </div>
+  );
+}
+
+function PartyMember(props) {
+  // console.log(props.member);
+  return (
+    <div className="party_member">
+      <div className="member_avatar" dangerouslySetInnerHTML={{__html: props.member.avatar}} />
+      <div className="member_name">{props.member.last_name}</div>
+      <div className="member_name">{props.member.first_name}</div>
+    </div>
+  );
+}
+
 class Index extends React.Component {
   constructor(props) {
     super(props);
@@ -48,6 +75,7 @@ class Index extends React.Component {
 
   componentDidMount() {
     this.fetchLections();
+    this.fetchMembers();
   }
 
   componentWillUnmount() {
@@ -78,9 +106,32 @@ class Index extends React.Component {
       });
   }
 
+  fetchMembers() {
+    axios.get(this.props.list_members_path + '.json')
+      .then(res => {
+
+        this.setState({
+          members: res.data
+        });
+      });
+  }
+
   render () {
     const lections = this.state.lections;
-
+    let industry = [];
+    let goverment = [];
+    let medical = [];
+    let education = [];
+    let social = [];
+    let building = [];
+    if (this.state.members !== undefined) {
+      industry = this.state.members.filter((m) => m.session == "industry");
+      goverment = this.state.members.filter((m) => m.session == "goverment");
+      medical = this.state.members.filter((m) => m.session == "medical");
+      education = this.state.members.filter((m) => m.session == "education");
+      social = this.state.members.filter((m) => m.session == "social");
+      building = this.state.members.filter((m) => m.session == "building");
+    }
     return (
       <div className="page page_index">
         <div className="page_index_header_wrapper">
@@ -232,8 +283,8 @@ class Index extends React.Component {
                             <div className="meta">
                               <div className="meta_item goverment">Государственное управление</div>
                             </div>
-
                             <div className="desc" dangerouslySetInnerHTML={{__html: lections[1].text_md}} />
+                            <Party members={goverment}/>
                           </div>
 
                           <div className="section_content_item swiper-slide">
@@ -241,6 +292,7 @@ class Index extends React.Component {
                               <div className="meta_item industry">Промышленность</div>
                             </div>
                             <div className="desc" dangerouslySetInnerHTML={{__html: lections[3].text_md}} />
+                            <Party members={industry}/>
                           </div>
 
                           <div className="section_content_item swiper-slide">
@@ -271,6 +323,7 @@ class Index extends React.Component {
                         </div>
 
                         <div className="swiper-pagination"></div>
+
                       </div>
                     </div>
                   </div>

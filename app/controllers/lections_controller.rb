@@ -5,6 +5,8 @@ class LectionsController < ApplicationController
 
   def index
     @lections = Lection.all
+
+    @members = Member.all
   end
 
   def list

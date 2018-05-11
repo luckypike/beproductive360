@@ -19,6 +19,10 @@ class MembersController < ApplicationController
     @members = Member.order(last_name: :asc).where(user: Current.user)
   end
 
+  def list
+    @members = Member.order(id: :desc)
+  end
+
   def show
     redirect_to [:members]
   end
