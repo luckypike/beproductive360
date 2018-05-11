@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 
 import axios from 'axios';
 
-import video from '../images/bg.mp4';
-
-import Logo from '!svg-react-loader!../images/logo_hor.svg';
+import Logo from '../images/logo.svg';
 
 import MinecLogo from '../images/partners/minec.svg';
 import RALogo from '../images/partners/rosatom.svg';
 import NizLogo from '../images/partners/niz.svg';
+import TassLogo from '../images/partners/tass.svg';
 
 
 import {
@@ -86,31 +85,51 @@ class Index extends React.Component {
         <div className="page_index_header_wrapper">
           <div className="page_index_header">
             <div className="logo">
-              <Logo />
+              <img src={Logo} />
             </div>
 
-            <div className="slogan">
-              Решения для тех, кто хочет добиться успеха
+            <div className="qwe">
+              <div className="place">
+                <span className="date">
+                  16 - 17 мая
+                </span>
+                <br />
+                Нижний Новгород
+              </div>
+
+              <div className="join">
+                {this.props.auth ? (
+                  <MembersLink {...this.props} />
+                ) : (
+                  <JoinLink {...this.props} />
+                )}
+              </div>
             </div>
 
-            <div className="place">
-              16-17 мая 2018
-              <br />
-              Нижний Новгород, Технопарк Анкудиновка
-            </div>
-
-            <div className="join">
-              {this.props.auth ? (
-                <MembersLink {...this.props} />
-              ) : (
-                <JoinLink {...this.props} />
-              )}
+            <div className="partners">
+              <div className="partners_g">
+                <div className="label">Организаторы</div>
+                <div className="partners_g_item">
+                  <img src={RALogo} />
+                </div>
+                <div className="partners_g_item">
+                  <img src={MinecLogo} />
+                </div>
+              </div>
+              <div className="partners_g">
+                <div className="label">При поддержке</div>
+                <div className="partners_g_item">
+                  <img src={NizLogo} />
+                </div>
+              </div>
+              <div className="partners_g">
+                <div className="label">Информационный партнер</div>
+                <div className="partners_g_item">
+                  <img src={TassLogo} />
+                </div>
+              </div>
             </div>
           </div>
-
-          <video className="bgvid" playsInline autoPlay muted loop>
-            <source src={video} type="video/mp4" />
-          </video>
         </div>
 
         <div className="page_index_intro">

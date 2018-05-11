@@ -2,60 +2,52 @@
 
 .page_index {
   &_header {
-    padding: calc(var(--yr) * 8) var(--xr) calc(var(--yr) * 16);
-    color: white;
+    background: url('../images/1440x640_bg.svg');
+    background-repeat: no-repeat;
+    background-position: 34%;
+    background-size: cover;
+    padding: calc(var(--yr) * 8) var(--xr);
+    color: var(--th_color);
     position: relative;
     z-index: 1;
 
     &_wrapper {
-      background-color: color(black alpha(-60%));
+      background: url('../images/1440x640_bg.svg');
+      background-repeat: no-repeat;
+      background-position: 74%;
+      background-size: cover;
+
       position: relative;
       overflow: hidden;
-
-      .bgvid {
-        /* display: none; */
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        transform: translateX(-50%) translateY(-50%);
-        z-index: -1;
-      }
     }
 
     .logo {
-      padding-right: 60px;
-      max-width: 23rem;
+      /* padding-right: 60px; */
+      width: 70%;
+      margin: 0 auto calc(var(--yr) * 8);
 
-      svg {
+      img {
         display: block;
-
-        .main {
-          /* fill: var(--pr_color); */
-          fill: white;
-        }
       }
     }
 
-    .slogan {
-      font-size: calc(var(--yr) * 10);
-      line-height: calc(var(--yr) * 12);
+    .partners {
+      display: none;
+    }
+
+    .qwe {
       font-weight: var(--fw_bold);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin: calc(var(--yr) * 8) 0;
+      font-size: calc(var(--yr) * 6);
+      line-height: calc(var(--yr) * 8);
+      text-align: center;
 
-      @media (--s) {
-        font-size: calc(var(--yr) * 22.5);
-        line-height: calc(var(--yr) * 24);
+      .date {
+        font-size: calc(var(--yr) * 10);
       }
-    }
 
-    .place {
-      margin: 0 0 calc(var(--yr) * 8);
+      .place {
+        margin: 0 0 calc(var(--yr) * 8);
+      }
     }
 
     .join {
@@ -65,8 +57,8 @@
         color: black;
         display: inline-block;
         border-radius: var(--yr);
-        padding: calc(var(--yr) * 5) calc(var(--xr));
-        font-size: calc(var(--yr) * 4.5);
+        padding: calc(var(--yr) * 3) calc(var(--xr) * 2);
+        font-size: calc(var(--yr) * 3.5);
         line-height: calc(var(--yr) * 6);
         font-family: inherit;
         letter-spacing: 0.1em;
@@ -74,33 +66,94 @@
         outline: none;
         text-decoration: none;
         font-weight: var(--fw_semi);
-
-        @media (--s) {
-          font-size: calc(var(--yr) * 5.5);
-          line-height: calc(var(--yr) * 6);
-
-        }
       }
     }
 
     @media (--s) {
-      .logo {
-        padding: calc(var(--yr) * 8) 0;
-        height: calc(var(--yr) * 32);
+      background-position: center;
+      padding: 0;
+      position: relative;
+      margin-bottom: calc(var(--yr) * 8);
+
+      &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-top: calc(640 / 1080 * 100%);
       }
 
-      .join {
+      &_wrapper {
+        background: none;
+      }
+
+      .partners {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &_g {
+          display: flex;
+          position: relative;
+
+          .label {
+            position: absolute;
+            font-weight: var(--fw_bold);
+            top: -56px;
+            left: 0;
+            font-size: calc(var(--yr) * 3.5);
+            line-height: calc(var(--yr) * 5);
+            color: black;
+            /* white-space: nowrap; */
+            width: 100%;
+            text-align: left;
+            /* padding-right: calc(var(--xr) * 2); */
+            /* transform: translate(-50%, -28px); */
+          }
+
+          &_item {
+            margin-right: calc(var(--xr) * 2);
+
+            img {
+              display: block;
+              height: 100px;
+            }
+          }
+        }
+      }
+
+      .logo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: calc(6 / 16 * 100%);
+        transform: translate(-50%, -50%);
+        padding: 0 calc(var(--xr) * 2);
+        /* height: calc(var(--yr) * 32); */
+      }
+
+      .qwe {
         position: absolute;
         top: calc(var(--yr) * 16);
         right: var(--xr);
+        text-align: left;
       }
     }
 
     @media (--m) {
-      margin: 0 calc(2 / 16 * 100%);
+
+
+      &::before {
+        padding-top: calc(640 / 1440 * 100%);
+      }
+
+      .qwe {
+        right: calc(2 / 16 * 100%);
+      }
 
       .slogan {
-        max-width: 64rem;
+        /* max-width: 64rem; */
       }
     }
   }
