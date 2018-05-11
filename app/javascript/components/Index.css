@@ -387,6 +387,8 @@
                           left: 50%;
                           position: absolute;
                           transform: translateX(-50%);
+                          width: 100%;
+                          height: auto;
                         }
                       }
                     }

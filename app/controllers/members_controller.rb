@@ -20,7 +20,7 @@ class MembersController < ApplicationController
   end
 
   def list
-    @members = Member.order(id: :desc)
+    @members = Member.order(:last_name)
   end
 
   def show
