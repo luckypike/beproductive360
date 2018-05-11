@@ -4,7 +4,7 @@
   &_header {
     background: url('../images/1440x640_bg.svg');
     background-repeat: no-repeat;
-    background-position: 34%;
+    background-position: 26%;
     background-size: cover;
     padding: calc(var(--yr) * 8) var(--xr);
     color: var(--th_color);
@@ -14,7 +14,7 @@
     &_wrapper {
       background: url('../images/1440x640_bg.svg');
       background-repeat: no-repeat;
-      background-position: 74%;
+      background-position: 83%;
       background-size: cover;
 
       position: relative;
@@ -22,9 +22,8 @@
     }
 
     .logo {
-      /* padding-right: 60px; */
-      width: 70%;
-      margin: 0 auto calc(var(--yr) * 8);
+      width: 10rem;
+      margin: calc(var(--yr) * 18) auto calc(var(--yr) * 8);
 
       img {
         display: block;
@@ -69,6 +68,12 @@
       }
     }
 
+    @media (width > 720px) {
+      &_wrapper {
+        background: none;
+      }
+    }
+
     @media (--s) {
       background-position: center;
       padding: 0;
@@ -82,9 +87,7 @@
         padding-top: calc(640 / 1080 * 100%);
       }
 
-      &_wrapper {
-        background: none;
-      }
+
 
       .partners {
         display: flex;
