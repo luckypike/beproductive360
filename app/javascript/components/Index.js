@@ -180,16 +180,16 @@ class Index extends React.Component {
 
             <div className="partners">
               <div className="partners_g">
-                <div className="label">Организаторы</div>
+                <div className="label">Генеральный партнер</div>
                 <div className="partners_g_item">
                   <img src={RALogo} />
                 </div>
+              </div>
+              <div className="partners_g">
+                <div className="label cn">Организаторы</div>
                 <div className="partners_g_item">
                   <img src={MinecLogo} />
                 </div>
-              </div>
-              <div className="partners_g">
-                <div className="label">При поддержке</div>
                 <div className="partners_g_item">
                   <img src={NizLogo} />
                 </div>
@@ -955,15 +955,27 @@ class Index extends React.Component {
         </div>
 
         <div className="page_index_partners">
-          <div className="list_partners">
-            <div className="list_partners_item">
-              <img src={MinecLogo} />
+          <div className="partners">
+            <div className="partners_g">
+              <div className="label">Генеральный партнер</div>
+              <div className="partners_g_item">
+                <img src={RALogo} />
+              </div>
             </div>
-            <div className="list_partners_item">
-              <img src={RALogo} />
+            <div className="partners_g">
+              <div className="label cn">Организаторы</div>
+              <div className="partners_g_item">
+                <img src={MinecLogo} />
+              </div>
+              <div className="partners_g_item">
+                <img src={NizLogo} />
+              </div>
             </div>
-            <div className="list_partners_item">
-              <img src={NizLogo} />
+            <div className="partners_g">
+              <div className="label">Информационный партнер</div>
+              <div className="partners_g_item">
+                <img src={TassLogo} />
+              </div>
             </div>
           </div>
         </div>
