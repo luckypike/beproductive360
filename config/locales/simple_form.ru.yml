@@ -46,6 +46,7 @@ ru:
           hampton: Hampton by Hilton (3*)
           ibis: Ibis (3*)
           kulibin: Кулибин (5*)
+          none: Не в отеле
 
         session:
           industry: Промышленность

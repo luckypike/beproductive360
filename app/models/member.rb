@@ -29,7 +29,7 @@ class Member < ApplicationRecord
 
   has_one_attached :image
 
-  validates_presence_of :first_name, :last_name, :company, :session, :email, :state
+  validates_presence_of :first_name, :last_name, :company, :session, :email, :state, :hotel
 
   # validate do
   #   unless image.attached?
@@ -38,7 +38,7 @@ class Member < ApplicationRecord
   # end
 
   SESSIONS = %w(industry goverment medical education social building)
-  HOTELS = %w(sheraton kulibin courtyard hampton ibis)
+  HOTELS = %w(sheraton kulibin courtyard hampton ibis none)
   OBJECTS = %w(o1 o2 o3 o4 o5 o6 o7)
 
   def title
