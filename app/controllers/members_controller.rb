@@ -7,7 +7,7 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.json
   def all
-    @members = Member.order(id: :desc)
+    @members = Member.includes(:user).order(id: :desc)
 
     respond_to do |format|
       format.html

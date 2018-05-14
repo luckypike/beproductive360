@@ -5,7 +5,7 @@ class Member < ApplicationRecord
         self.send_text
       end
 
-      transition :undef => :accepted
+      transition [:undef, :rejected] => :accepted
     end
 
     event :reject do
@@ -13,15 +13,7 @@ class Member < ApplicationRecord
         self.send_text
       end
 
-      transition :undef => :rejected
-    end
-
-    event :reaccept do
-      after do
-        self.send_text
-      end
-
-      transition :rejected => :accepted
+      transition [:undef, :accepted] => :rejected
     end
   end
 

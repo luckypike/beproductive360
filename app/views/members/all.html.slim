@@ -17,12 +17,8 @@
               | #{@members.length - index}. #{member.title_full}
             =< link_to "редактировать", [:edit, member, back: :all]
             br
-            - if member.undef?
-              =< link_to "Подтвердить", [member, :accept], method: :post, class: [:state, :accepted]
-              =< link_to "Отклонить", [member, :reject], method: :post, class: [:state, :rejected]
-            - elsif member.rejected?
-              =< link_to "Подтвердить", [member, :reaccept], method: :post, class: [:state, :accepted]
-
+            =< link_to "Подтвердить", [member, :accept], method: :post, class: [:state, :accepted] if member.can_accept?
+            =< link_to "Отклонить", [member, :reject], method: :post, class: [:state, :rejected] if member.can_reject?
 
           .all
             .all_item
