@@ -278,7 +278,7 @@ class Index extends React.Component {
 
                 <div className="section_content">
                   <div className="section_content_title bld">
-                    Торжественное открытие форума
+                    Торжественное открытие Форума
                   </div>
 
                   <div className="section_content_place">
@@ -286,11 +286,15 @@ class Index extends React.Component {
                   </div>
 
                   <div className="section_content_item with_bl">
-                    Никитин Г.С., Врио Губернатора Нижегородской области
+                    Орешкин М.С., и. о. Министра экономического развития Российской Федерации
                   </div>
 
                   <div className="section_content_item with_bl">
-                    Орешкин М.С., и. о. Министра экономического развития Российской Федерации
+                    Лихачёв А.Е., генеральный директор Государственной корпорации по атомной энергии «Росатом»
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    Никитин Г.С., Врио Губернатора Нижегородской области
                   </div>
                 </div>
               </div>
