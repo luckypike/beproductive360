@@ -618,7 +618,7 @@ class Index extends React.Component {
               <div className="section">
                 <div className="section_time">
                   <span>
-                    09:30 – 10:30
+                    09:00 – 10:00
                   </span>
                 </div>
 
