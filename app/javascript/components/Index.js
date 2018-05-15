@@ -422,13 +422,27 @@ class Index extends React.Component {
               <div className="section">
                 <div className="section_time">
                   <span>
-                    14:30 – 15:30
+                    14:30 – 16:00
                   </span>
                 </div>
 
                 <div className="section_content">
                   <div className="section_content_title">
                     Обед
+                  </div>
+                </div>
+              </div>
+
+              <div className="section">
+                <div className="section_time">
+                  <span>
+                    15:30 – 16:00
+                  </span>
+                </div>
+
+                <div className="section_content">
+                  <div className="section_content_title">
+                    Пресс-подход: Орешкин М.С., Никитин Г.С., Лихачев А.Е.
                   </div>
                 </div>
               </div>
@@ -450,7 +464,15 @@ class Index extends React.Component {
                   </div>
 
                   <div className="section_content_item with_bl">
-                    Модератор: определяется
+                    Модераторы:
+                    <ul>
+                      <li>
+                        Урожаева Ю.В., помощник Министра экономического развития Российской Федерации;
+                      </li>
+                      <li>
+                        Ужакина Ю.Б., генеральный директор Академии Росатома.
+                      </li>
+                    </ul>
                   </div>
 
                   <div className="section_content_item with_bl">
@@ -607,6 +629,10 @@ class Index extends React.Component {
                   <div className="section_content_place">
                     Технопарк «Анкудиновка»
                   </div>
+
+                  <div className="section_content_item">
+                    Комиссия: Орешкин М.С., Никитин Г.С., Лихачев А.Е.
+                  </div>
                 </div>
               </div>
 
@@ -664,7 +690,7 @@ class Index extends React.Component {
                     </p>
 
                     <p>
-                      Время отправления шаттлов: с 09:00 до 09:20 от отелей Кулибин, Courtyard by Mariott, Hampton by Hilton, Ibis до отеля Sheraton
+                      Время отправления шаттлов: с 08:35 до 08:45 от отелей Кулибин, Courtyard by Mariott, Hampton by Hilton, Ibis до отеля Sheraton
                     </p>
                   </div>
                 </div>
