@@ -745,7 +745,7 @@ class Index extends React.Component {
               <div className="section">
                 <div className="section_time">
                   <span>
-                    15:00 – 17:00
+                    12:20 — 14:20
                   </span>
                 </div>
 
@@ -754,8 +754,12 @@ class Index extends React.Component {
                     Совещание по результатам исполнения стратегических инициатив Губернатора Нижегородской области
                   </div>
 
+                  <div className="section_content_place">
+                    Отель Sheraton, зал «Пожарский»
+                  </div>
+
                   <div className="section_content_item">
-                    (участие по приглашениям)
+                    Участие по приглашениям
                   </div>
                 </div>
               </div>
