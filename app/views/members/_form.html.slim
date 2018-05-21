@@ -10,7 +10,7 @@
       = f.input :middle_name
       = f.input :email
 
-      = image_tag f.object.image.variant(resize: "200x200") if f.object.image.attached?
+      = image_tag f.object.image.variant(resize: "200x200", 'auto-orient': true) if f.object.image.attached? || 1 rescue nil
       = f.input :image
 
       = f.input :company
@@ -29,7 +29,7 @@
       = f.input :hotel, as: :radio_buttons, collection: Member::HOTELS.map(&:to_sym)
       .hotels_desc
         | Подробная информация об отелях (фотографии, отзывы и месторасположение):
-        =< link_to 'Sheraton', 'http://www.starwoodhotels.com/sheraton/index.html', target: '_blank'
+        =< link_to 'Sheraton', 'http://www.starwoodhotels.com/sheraton/property/overview/index.html?language=ru_RU&propertyID=4843', target: '_blank'
         | ,
         =< link_to 'Courtyard by Marriott', 'https://www.marriott.com.ru/hotels/travel/gojcy-courtyard-nizhny-novgorod-city-center', target: '_blank'
         | ,

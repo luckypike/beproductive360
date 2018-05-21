@@ -5,7 +5,7 @@ class Member < ApplicationRecord
         self.send_text
       end
 
-      transition :undef => :accepted
+      transition [:undef, :rejected] => :accepted
     end
 
     event :reject do
@@ -13,15 +13,7 @@ class Member < ApplicationRecord
         self.send_text
       end
 
-      transition :undef => :rejected
-    end
-
-    event :reaccept do
-      after do
-        self.send_text
-      end
-
-      transition :rejected => :accepted
+      transition [:undef, :accepted] => :rejected
     end
   end
 
@@ -29,7 +21,7 @@ class Member < ApplicationRecord
 
   has_one_attached :image
 
-  validates_presence_of :first_name, :last_name, :company, :session, :email, :state
+  validates_presence_of :first_name, :last_name, :company, :session, :email, :state, :hotel
 
   # validate do
   #   unless image.attached?
@@ -38,7 +30,7 @@ class Member < ApplicationRecord
   # end
 
   SESSIONS = %w(industry goverment medical education social building)
-  HOTELS = %w(sheraton kulibin courtyard hampton ibis)
+  HOTELS = %w(sheraton kulibin courtyard hampton ibis none)
   OBJECTS = %w(o1 o2 o3 o4 o5 o6 o7)
 
   def title

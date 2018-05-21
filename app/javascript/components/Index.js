@@ -54,8 +54,11 @@ function PartyMember(props) {
   return (
     <div className="party_member">
       <div className="member_avatar" dangerouslySetInnerHTML={{__html: props.member.avatar}} />
-      <div className="member_name">{props.member.last_name}</div>
-      <div className="member_name">{props.member.first_name}</div>
+      <div className="member_name">
+        {props.member.last_name}
+        <br />
+        {props.member.first_name}
+      </div>
     </div>
   );
 }
@@ -177,16 +180,16 @@ class Index extends React.Component {
 
             <div className="partners">
               <div className="partners_g">
-                <div className="label">Организаторы</div>
+                <div className="label">Генеральный партнер</div>
                 <div className="partners_g_item">
                   <img src={RALogo} />
                 </div>
+              </div>
+              <div className="partners_g">
+                <div className="label cn">Организаторы</div>
                 <div className="partners_g_item">
                   <img src={MinecLogo} />
                 </div>
-              </div>
-              <div className="partners_g">
-                <div className="label">При поддержке</div>
                 <div className="partners_g_item">
                   <img src={NizLogo} />
                 </div>
@@ -205,6 +208,29 @@ class Index extends React.Component {
           <div className="who">
             Форум соберет инициативные группы для обмена опытом
             и обсуждения рабочих вопросов в рамках реализации национальной инициативы «Повышение производительности труда и поддержка занятости»
+          </div>
+        </div>
+
+        <div className="page_index_shuttle">
+          <div className="text">
+            <p>
+              Информация по шаттлам в дни проведения Форума
+            </p>
+            <p>
+              <b>16.05:</b>
+            </p>
+
+            <ul>
+              <li>Время отправления шаттлов от аккредитованных отелей до площадки Форума (Технопарк Анкудиновка, ул. Академика Сахарова, д. 4): 10:20 -10:50. Просим участников быть готовыми к отправлению в 10:20! </li>
+            </ul>
+            <p>
+              <b>17.05:</b>
+            </p>
+            <ul>
+              <li>Время отправления шаттлов на деловой завтрак в отеле Sheraton (Театральная площадь, 1) от аккредитованных отелей: 8:35 - 8:45</li>
+              <li>Время отправления шаттлов на экскурсии от отеля Sheraton: с 10:00</li>
+              <li>В зоне ресепшн аккредитованных отелей присутствуют волонтеры в футболках с логотипом форума, которые координируют делегатов по времени и месту отправления шаттлов до площадки Форума.</li>
+            </ul>
           </div>
         </div>
 
@@ -275,7 +301,7 @@ class Index extends React.Component {
 
                 <div className="section_content">
                   <div className="section_content_title bld">
-                    Торжественное открытие форума
+                    Торжественное открытие Форума
                   </div>
 
                   <div className="section_content_place">
@@ -288,6 +314,10 @@ class Index extends React.Component {
 
                   <div className="section_content_item with_bl">
                     Орешкин М.С., и. о. Министра экономического развития Российской Федерации
+                  </div>
+
+                  <div className="section_content_item with_bl">
+                    Лихачёв А.Е., генеральный директор Государственной корпорации по атомной энергии «Росатом»
                   </div>
                 </div>
               </div>
@@ -392,13 +422,27 @@ class Index extends React.Component {
               <div className="section">
                 <div className="section_time">
                   <span>
-                    14:30 – 15:30
+                    14:30 – 16:00
                   </span>
                 </div>
 
                 <div className="section_content">
                   <div className="section_content_title">
                     Обед
+                  </div>
+                </div>
+              </div>
+
+              <div className="section">
+                <div className="section_time">
+                  <span>
+                    15:30 – 16:00
+                  </span>
+                </div>
+
+                <div className="section_content">
+                  <div className="section_content_title">
+                    Пресс-подход: Орешкин М.С., Никитин Г.С., Лихачев А.Е.
                   </div>
                 </div>
               </div>
@@ -420,7 +464,15 @@ class Index extends React.Component {
                   </div>
 
                   <div className="section_content_item with_bl">
-                    Модератор: определяется
+                    Модераторы:
+                    <ul>
+                      <li>
+                        Урожаева Ю.В., помощник Министра экономического развития Российской Федерации;
+                      </li>
+                      <li>
+                        Ужакина Ю.Б., генеральный директор Академии Росатома.
+                      </li>
+                    </ul>
                   </div>
 
                   <div className="section_content_item with_bl">
@@ -577,6 +629,10 @@ class Index extends React.Component {
                   <div className="section_content_place">
                     Технопарк «Анкудиновка»
                   </div>
+
+                  <div className="section_content_item">
+                    Комиссия: Орешкин М.С., Никитин Г.С., Лихачев А.Е.
+                  </div>
                 </div>
               </div>
 
@@ -611,7 +667,7 @@ class Index extends React.Component {
               <div className="section">
                 <div className="section_time">
                   <span>
-                    09:30 – 10:30
+                    09:00 – 10:00
                   </span>
                 </div>
 
@@ -634,7 +690,7 @@ class Index extends React.Component {
                     </p>
 
                     <p>
-                      Время отправления шаттлов: с 09:00 до 09:20 от отелей Кулибин, Courtyard by Mariott, Hampton by Hilton, Ibis до отеля Sheraton
+                      Время отправления шаттлов: с 08:35 до 08:45 от отелей Кулибин, Courtyard by Mariott, Hampton by Hilton, Ibis до отеля Sheraton
                     </p>
                   </div>
                 </div>
@@ -689,7 +745,7 @@ class Index extends React.Component {
               <div className="section">
                 <div className="section_time">
                   <span>
-                    15:00 – 17:00
+                    12:20 — 14:20
                   </span>
                 </div>
 
@@ -698,8 +754,12 @@ class Index extends React.Component {
                     Совещание по результатам исполнения стратегических инициатив Губернатора Нижегородской области
                   </div>
 
+                  <div className="section_content_place">
+                    Отель Sheraton, зал «Пожарский»
+                  </div>
+
                   <div className="section_content_item">
-                    (участие по приглашениям)
+                    Участие по приглашениям
                   </div>
                 </div>
               </div>
@@ -952,15 +1012,27 @@ class Index extends React.Component {
         </div>
 
         <div className="page_index_partners">
-          <div className="list_partners">
-            <div className="list_partners_item">
-              <img src={MinecLogo} />
+          <div className="partners">
+            <div className="partners_g">
+              <div className="label">Генеральный партнер</div>
+              <div className="partners_g_item">
+                <img src={RALogo} />
+              </div>
             </div>
-            <div className="list_partners_item">
-              <img src={RALogo} />
+            <div className="partners_g">
+              <div className="label cn">Организаторы</div>
+              <div className="partners_g_item">
+                <img src={MinecLogo} />
+              </div>
+              <div className="partners_g_item">
+                <img src={NizLogo} />
+              </div>
             </div>
-            <div className="list_partners_item">
-              <img src={NizLogo} />
+            <div className="partners_g">
+              <div className="label">Информационный партнер</div>
+              <div className="partners_g_item">
+                <img src={TassLogo} />
+              </div>
             </div>
           </div>
         </div>

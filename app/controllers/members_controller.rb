@@ -7,7 +7,7 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.json
   def all
-    @members = Member.order(id: :desc)
+    @members = Member.includes(:user).order(id: :desc)
 
     respond_to do |format|
       format.html
@@ -20,7 +20,7 @@ class MembersController < ApplicationController
   end
 
   def list
-    @members = Member.order(:last_name)
+    @members = Member.accepted.with_attached_image.order(:last_name)
   end
 
   def show
