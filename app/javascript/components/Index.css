@@ -311,6 +311,20 @@
                     font-size: calc(var(--yr) * 3);
                     line-height: calc(var(--yr) * 4);
 
+                    a {
+                      background-color: #fcb72d;
+                      border: 0;
+                      color: black;
+                      display: inline-block;
+                      border-radius: var(--yr);
+                      padding: calc(var(--yr)) calc(var(--xr));
+                      margin: calc(var(--yr) * 2) 0;
+                      line-height: calc(var(--yr) * 6);
+                      font-family: inherit;
+                      outline: none;
+                      text-decoration: none;
+                    }
+
                     @media (--s) {
                       font-size: calc(var(--yr) * 4);
                       line-height: calc(var(--yr) * 5.5);
