@@ -9,6 +9,6 @@ set :deploy_to, "/home/deploy/apps/beproductive360.ru"
 set :ssh_options, { forward_agent: true }
 
 append :linked_files, "config/database.yml", "config/master.key"
-append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "storage"
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "storage", "public/reports"
 
 set :keep_releases, 5
